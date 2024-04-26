@@ -37,7 +37,7 @@ The Rijndael algorithm was developed in the late 1990s. In 2001 it was officiall
 
 AES is the most commonly used symmetric algorithm used today. It is considered very secure, even garnering the label of quantum-resistant if it is implemented properly. AES is designed to operate on 128-bit input blocks, and can use either 128-bit, 192-bit, or 256-bit keys. If you were trying to do an exhaustive key space search or a brute force of AES-128, it would take you more than 1,000,000,000,000,000,000,000 years [5]. Even with the world's fastest supercomputer, it would take about a billion years to brute force (again, if implemented properly). 
 
-This set implements and attacks AES in ECB mode. There's more info on ECB mode in the next set write-up, but for now it should be noted that ECB is not considered secure because of its failure to adequately obscure the statistical properties of the plaintext. 
+This set implements and attacks AES in ECB mode. There's more info on ECB mode in the next set write-up, but for now it should be noted that ECB is not considered secure because of its failure to adequately obscure the statistical structure of the plaintext [6]. 
 
 ---------------------------------------------------------------------------------------------
 
@@ -52,6 +52,8 @@ This set implements and attacks AES in ECB mode. There's more info on ECB mode i
 [4] McKay, D.J.C. (2003). _Information Theory, Inference, and Learning Algorithms_. p. 206.
 
 [5] Boneh, D., Shoup, V. (2023). _A Graduate Course in Applied Cryptography_. p. 114-117. 
+
+[6] Ferguson, et al. (2010). _Cryptography Engineering_. p. 72. 
 
 # Exercises for set 1
 
