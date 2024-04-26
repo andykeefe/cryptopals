@@ -1,6 +1,6 @@
 ![main-image](https://github.com/andykeefe/andykeefe/assets/154836099/b4e27e08-8ad6-48d0-ab82-a90deae91386)
 
-Building a Catafalque, Tomb of Ipuy, 1279 BCE-1213 BCE
+_Building a Catafalque_, Tomb of Ipuy, 1279 BCE-1213 BCE
 
 # Basics, XOR operations, and symmetric cryptography
 
