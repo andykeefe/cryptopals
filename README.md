@@ -1,8 +1,6 @@
-![image](https://github.com/andykeefe/andykeefe/assets/154836099/45dc4485-119d-4362-b7c5-31205603d03d)
+![main-image](https://github.com/andykeefe/cryptopals/assets/154836099/7f03c82a-22f8-4cc3-9eb4-b7ac166d9a2b)
 
-The arcaded courtyard in the House of the Muses, Ostia
-
-From _A Companion to Roman Architecture_ edited by Roger B. Ulrich and Caroline K. Quenemoen
+Titian, _Landscape with a Goat_, 1500-1511
 
 CryptoPals
 ----------------------------------------------------------------------------------------------------------------------------------
