@@ -29,11 +29,13 @@ Exclusive-or, referred to as XOR, is a bitwise operation, meaning it operates on
 
 In an XOR operation, a set of ones and zeros is added to another set of ones and zeros. The result of the operation is considered 0 if the XORed values are the same, and 1 if the two values are different. For example if you XOR 1101 with 0111, you get 1010. If 1111 is XORed with 0000, the result is 1111. If 0001 is XORed with 1011, the result is 1000 [3].
 
+We'll see that XOR operations are useful for calculating a _Hamming Distance_, which in our example is the number of bits where the two byte strings differ. Because XOR operations return 1 when two compared bits are different, we can calculate the Hamming Distance by "counting" the 1s in the result of a XOR operation of two binary vectors [4].
+
 ## Advanced Encryption Standard (AES)
 
 The Rijndael algorithm was developed in the late 1990s. In 2001 it was officially designated as the Advanced Encryption Standard by the NIST after several rounds of competition among different algorithms. 
 
-AES is the most commonly used symmetric algorithm used today. It is considered very secure, even garnering the label of quantum-resistant if it is implemented properly. AES is designed to operate on 128-bit input blocks, and can use either 128-bit, 192-bit, or 256-bit keys. If you were trying to do an exhaustive key space search or a brute force of AES-128, it would take you more than 10,000,000,000,000,000,000,000 years [4]. That's much, much longer than the age of the universe. 
+AES is the most commonly used symmetric algorithm used today. It is considered very secure, even garnering the label of quantum-resistant if it is implemented properly. AES is designed to operate on 128-bit input blocks, and can use either 128-bit, 192-bit, or 256-bit keys. If you were trying to do an exhaustive key space search or a brute force of AES-128, it would take you more than 10,000,000,000,000,000,000,000 years [5]. That's much, much longer than the age of the universe. 
 
 This set implements and attacks AES in ECB mode. There's more info on ECB mode in the next set write-up, but for now it should be noted that ECB is not considered secure because of its failure to adequately obscure the statistical properties of the plaintext. 
 
@@ -47,7 +49,9 @@ This set implements and attacks AES in ECB mode. There's more info on ECB mode i
 
 [3] Dunin, E., & Schmeh, K. (2023). _Codebreaking: A Practical Guide_. p. 398.
 
-[4] Boneh, D., Shoup, V. (2023). _A Graduate Course in Applied Cryptography_. p. 114-117. 
+[4] McKay, D.J.C. (2003). _Information Theory, Inference, and Learning Algorithms_. p. 206.
+
+[5] Boneh, D., Shoup, V. (2023). _A Graduate Course in Applied Cryptography_. p. 114-117. 
 
 # Exercises for set 1
 
