@@ -35,7 +35,7 @@ We'll see that XOR operations are useful for calculating a _Hamming Distance_, w
 
 The Rijndael algorithm was developed in the late 1990s. In 2001 it was officially designated as the Advanced Encryption Standard by the NIST after several rounds of competition among different algorithms. 
 
-AES is the most commonly used symmetric algorithm used today. It is considered very secure, even garnering the label of quantum-resistant if it is implemented properly. AES is designed to operate on 128-bit input blocks, and can use either 128-bit, 192-bit, or 256-bit keys. If you were trying to do an exhaustive key space search or a brute force of AES-128, it would take you more than 10,000,000,000,000,000,000,000 years [5]. That's much, much longer than the age of the universe. 
+AES is the most commonly used symmetric algorithm used today. It is considered very secure, even garnering the label of quantum-resistant if it is implemented properly. AES is designed to operate on 128-bit input blocks, and can use either 128-bit, 192-bit, or 256-bit keys. If you were trying to do an exhaustive key space search or a brute force of AES-128, it would take you more than 1,000,000,000,000,000,000,000 years [5]. Even with the world's fastest supercomputer, it would take about a billion years to brute force (again, if implemented properly). 
 
 This set implements and attacks AES in ECB mode. There's more info on ECB mode in the next set write-up, but for now it should be noted that ECB is not considered secure because of its failure to adequately obscure the statistical properties of the plaintext. 
 
