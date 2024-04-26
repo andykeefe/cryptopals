@@ -1,6 +1,8 @@
 # Cryptography Books
 
-Throughout the blurbs I write for each set of problems, I often make reference to various texts. This section has a complete list of texts referenced, or texts that I think are useful in understanding the topics but aren't explicitly stated. Think of it as a quick bibliography to tap into if you want to go deeper into these topics.
+Throughout the blurbs I write for each set of problems, I often make reference to various texts. This section has a nearly complete list of texts referenced, or texts that I think are useful in understanding the topics but aren't explicitly stated. Think of it as a quick bibliography to tap into if you want to go deeper into these topics.
+
+There are a few cases where a book I've referenced is not in this list; in that case, just search for the book on the Internet if you wish to know more.
 
 ### General cryptography
 
