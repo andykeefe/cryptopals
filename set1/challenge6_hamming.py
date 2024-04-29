@@ -58,6 +58,7 @@ hamming_distance(a, b)
 """
 
     We've confirmed that our function for calculating the Hamming distance works,
-    so we can continue to the actual challenge.
+    so we can continue to the actual challenge and work on implementing it into
+    our program.
 
 """
