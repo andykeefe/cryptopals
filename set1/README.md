@@ -21,6 +21,8 @@ LWKLQNLZLOOFRQTXHUJDXO
 
 To decrypt the ciphered message, the recipient would need to have knowledge of the key. The encryption and decryption key are of the same value, just with "reversed" operations. This is the concept of _symmetric keys_, and the backbone of today's symmetric cryptography: to decrypt an encrypted message, both parties **must** share the same key.
 
+Problems 5 and 6 deal with another historical cipher, the Vigenere cipher. In this scheme, a message is encrypted using another word. 
+
 It's true that _every_ historical cipher used symmetric keys; for nearly 3000 years, symmetric key cryptography was the only way to go [2]. Mathematical breakthroughs in the 1960s and 1970s introduced public-key cryptography, or asymmetric cryptography, where in each party has a public key and private key, but we'll talk more about this in another set. Now we'll move on to briefly explaining the XOR operation. 
 
 ## XOR operations
