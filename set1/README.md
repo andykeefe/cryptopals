@@ -27,7 +27,7 @@ It's true that _every_ historical cipher used symmetric keys; for nearly 3000 ye
 
 Exclusive-or, referred to as XOR, is a bitwise operation, meaning it operates on ones and zeros. Rooted in the earlier 20th century, the XOR operation was used in a _one time pad_, where the key is the length of the message. This was wildly inefficient, and new methods of encryption were sought.
 
-In an XOR operation, a set of ones and zeros is added to another set of ones and zeros. The result of the operation is considered 0 if the XORed values are the same, and 1 if the two values are different. For example if you XOR 1101 with 0111, you get 1010. If 1111 is XORed with 0000, the result is 1111. If 0001 is XORed with 1011, the result is 1000 [3].
+In an XOR operation, a set of ones and zeros is added to another set of ones and zeros. The result of the operation is considered 0 if the XORed values are the same, and 1 if the two values are different. For example if you XOR 1101 with 0111, you get 1010. If 1111 is XORed with 0000, the result is 1111. If 0001 is XORed with 1011, the result is 1010 [3].
 
 We'll see that XOR operations are useful for calculating a _Hamming Distance_, which in our example is the number of bits where the two byte strings differ. Because XOR operations return 1 when two compared bits are different, we can calculate the Hamming Distance by "counting" the 1s in the result of a XOR operation of two binary vectors [4].
 
