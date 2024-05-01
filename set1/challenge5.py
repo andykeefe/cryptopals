@@ -19,8 +19,8 @@ def vigenere_xor(key: bytes, plaintext: bytes) -> bytes:
     using the cycle() function would result in ICEICEICEICEICEICEICE... and so on.
 
     We use the isclice() function to truncate the cycle() function to the length of the 
-    plaintext input. So if we wanted to cut the key to match an input that is 5  characters
-    long, we would do something like
+    plaintext input. So if we wanted to cut the key 'ICE' to match an input that is 5 
+    characters long, we would do something like
                     
                     islice(cycle(key), 5)
 
