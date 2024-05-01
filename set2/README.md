@@ -26,7 +26,7 @@ CBC mode is safer. The encryption of a the first block includes an initializatio
 
 ## References
 
-[1] Paar, C., & Pelzl, J. (2010)._Understanding Cryptography_. p. 58.
+[1] Paar, C., & Pelzl, J. (2010). _Understanding Cryptography_. p. 58.
 
 
 ## Exercises for set 2
