@@ -9,8 +9,6 @@ from challenge3v2 import score_text, frequencies
 from challenge5 import vigenere_xor
 
 
-weights = {n: bin(n).count("1") for n in range(256)}
-
 @dataclass(order=True)
 class ScoredGuess:
     score: float = float('inf')
@@ -24,6 +22,14 @@ class ScoredGuess:
         pt = xor1(ct, full_key)
         score = score_text(pt)
         return cls(score, key_val, ct, pt)
+
+        """ 
+
+            ScoredGuess is a data class to conveniently organize and compare several
+            decryption attempts. We can call score, key, etc. as attributes in the 
+            crack_xor function conveniently. 
+
+        """
 
 
 def crack_xor(ct: bytes) -> ScoredGuess:
@@ -46,11 +52,21 @@ def crack_xor(ct: bytes) -> ScoredGuess:
 
     return best_guess
 
+    """
+
+        Try all possible keys from 0 to 255, calculate score for each decryption attempt,
+        and return best guess as ScoredGuess object. 
+
+    """
+
+weights = {n: bin(n).count("1") for n in range(256)}
+
 def hamming_distance(a: bytes, b: bytes) -> bytes:
     return sum(weights[byte] for byte in xor1(a, b))
 
 
 MAX_KEYSIZE = 40
+
 def guess_keysize(ct: bytes, number_guesses: int = 1) -> list[tuple[float, int]] :
     def get_score(size: int) -> float:
         chunks = (ct[:size], ct[size:2*size], ct[2*size:3*size], ct[3*size:4*size])
@@ -61,8 +77,17 @@ def guess_keysize(ct: bytes, number_guesses: int = 1) -> list[tuple[float, int]]
     scores = [(get_score(size), size) for size in range(2, MAX_KEYSIZE+1)]
     scores.sort()
     return scores[:number_guesses]
+    
+    """
 
+        guess_keysize takes in decoded ciphertext and returns the top 5 size guesses.
+        get_score takes blocks (chunks) of the ciphertext and finds the average
+        Hamming Distance between them for key sizes from 2 to 41. 
 
+        At each key size, the ciphertext is divided into blocks of that size and 
+        Hamming distance is calculated between blocks.
+
+    """
 
 def crack_vigenere(ciphertext: bytes, keysize: int) -> tuple[float, bytes] :
     chunks = [ciphertext[i::keysize] for i in range(keysize)]
@@ -73,7 +98,20 @@ def crack_vigenere(ciphertext: bytes, keysize: int) -> tuple[float, bytes] :
 
     return combined_score, key
 
+    """ 
 
+        Paramters for crack_vigenere are the ciphertext and the top 5 guesses
+        for keysizes.
+
+        First we divide the ciphertext into blocks based on the given keysize, then
+        iterate through each block of the ciphertext. Each block is treated as a 
+        single-byte XOR operation, trying all possible key values from 0 to 255 and
+        calculating a score for each attempt. 
+
+        The combined score is calculated by summing up all scores in ScoredGuess objects
+        and divides it by the keysize to give an average score per byte of the key.
+
+    """
 
 if __name__ == '__main__':
     with open("program_data/6.txt") as f:
