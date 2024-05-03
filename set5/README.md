@@ -49,19 +49,7 @@ Here's a better look at the sequence with which the key is exchanged [2]:
 ![image](https://github.com/andykeefe/andykeefe/assets/154836099/eaa49610-d4d7-4c11-a7e4-9952248e7ad9)
 
 
-To fully understand the discrete logarithm problem, it helps to have some background in abstract algebra, which I'm sure sounds really fun for you. I'll give some resources below for those willing to satiate their curiosity and fulfill their understanding as robustly as possible.
-
-If you've studied calculus and some linear algebra, check out this free textbook:
-- Beezer, R.A. (2015). _A First Course in Linear Algebra_.
-  - Part 1 (pp. 11-74)
-
-If you want a quick mathematical overview:
-- Hoffstein, J., et al. (2008). _An Introduction to Mathematical Cryptography_.
-  - pp. 72-75
-
-If you want a quicker overview:
-- Paar, C., Pelzl, J. (2010). _Understanding Cryptography_.
-  - pp. 208-219
+To fully understand the discrete logarithm problem, it helps to have some background in abstract algebra, which I'm sure sounds really fun for you. I'll give some resources below for those willing to satiate their curiosity and fulfill their understanding as robustly as possible [3][4][5].
 
 ### Set theory, group theory, and modular arithmetic
 
@@ -129,6 +117,12 @@ I mentioned elliptic curve cryptography at the beginning of this write up, but I
 [1] Hoffstein, J., Pipher, J., Silverman, J. (2008). _An Introduction to Mathematical Cryptography_. p. 59.
 
 [2] Paar, C., & Pelzl, J. (2010). _Understanding Cryptography_. pp. 206-207.
+
+[3] Beezer, R.A. (2015). _A First Course in Linear Algebra_. pp. 11-74.
+
+[4] Hoffstein, J., et al. (2008). _An Introduction to Mathematical Cryptography_. pp. 72-75.
+
+[5] Paar, C., Pelzl, J. (2010). _Understanding Cryptography_. pp. 208-219
 
 
 Set 5 Problems
