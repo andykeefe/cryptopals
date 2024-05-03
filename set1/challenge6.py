@@ -103,7 +103,7 @@ def crack_vigenere(ciphertext: bytes, keysize: int) -> tuple[float, bytes] :
 
     """ 
 
-        Paramters for crack_vigenere are the ciphertext and the top 5 guesses
+        Parameters for crack_vigenere are the ciphertext and the top 5 guesses
         for keysizes.
 
         First we divide the ciphertext into blocks based on the given keysize, then
