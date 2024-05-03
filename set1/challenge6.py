@@ -29,6 +29,9 @@ class ScoredGuess:
             decryption attempts. We can call score, key, etc. as attributes in the 
             crack_xor function conveniently. 
 
+            By setting the order of the data class to True, we make comparison possible
+            between ScoredGuess objects.
+
         """
 
 
