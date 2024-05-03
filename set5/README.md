@@ -122,6 +122,8 @@ We see that _a = 3_ is a primitive element of the group $` Z^*_{10} `$ because i
 
 There are also subgroups, but I don't feel like writing about them.
 
+I mentioned elliptic curve cryptography at the beginning of this write up, but I won't be writing about it until set 8; none of the problems in this set deal with EC schemes. That also gives me some time to review some of the concepts and math related to it because EC represents a weak point in my understanding of cryptography.
+
 ## References
 
 [1] Hoffstein, J., Pipher, J., Silverman, J. (2008). _An Introduction to Mathematical Cryptography_. p. 59.
