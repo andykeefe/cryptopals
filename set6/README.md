@@ -52,7 +52,7 @@ The digital signature scheme with RSA is quite similar to the RSA encryption sch
 
 You can see that the digital signature scheme for RSA has about the same set up as an RSA encryption scheme [2].
 
-### DSA
+### Digital Signature Algorithm (DSA)
 
 DSA was originally constrained to key length between 512 and 1024 bits; the key length has increased in accordance with improved cryptanalysis, but let's assume that 1024 is the standard. DSA involves two cyclic groups. The large cyclic group $`Z^*_p`$, derived from a 1024-bit prime, has an order of 1024 bits in length and is the main computational space for generating signatures, and a smaller subgroup $` Z^*_p `$ is determined by a prime $`q`$ with a typical bit length of 160 bits. These values will yield a signature with 320 bit length.
 
