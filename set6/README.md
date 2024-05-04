@@ -48,10 +48,12 @@ The digital signature scheme with RSA is quite similar to the RSA encryption sch
 - Then he signs the document by computing $` S \equiv D^s \pmod n `$
 
 3. Patti pursues _verification_ of the document
-- She computes $` S^v \mod N `$ and checks that it is equal to $`D`$ [2]
+- She computes $` S^v \mod N `$ and checks that it is equal to $`D`$
 
+You can see that the digital signature scheme for RSA has about the same set up as an RSA encryption scheme [2].
 
 ### DSA
+
 
 
 
