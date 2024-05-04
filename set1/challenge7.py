@@ -6,7 +6,8 @@ from Crypto.Cipher import AES
     Crypto.Cipher is from PyCryptodome. I'm running these exercises on Arch Linux,
     which no longer supports pip. If you're on an Arch machine, you can install 
     PyCryptodome by running sudo pacman -S python-pycryptodome. If you aren't on 
-    Arch then ignore this and look up installation directions for your machine.
+    Arch then ignore this and look up installation directions for your machine. It
+    probably involves using pip to install PyCryptodome. 
 
 """
 
