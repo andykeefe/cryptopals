@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     """
 
-        We print out the ciphertext, but first replace the \n byte characters with b''.
+        We print out the decrypted plaintext, but first replace the \n byte characters with b''.
         I don't know, I thought this would clean up the plaintext but it didn't do much.
         Once again, you'll see that the plaintext is a classic piece of American literature. 
 
