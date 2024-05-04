@@ -28,7 +28,9 @@ CBC mode is safer. The encryption of a the first block includes an initializatio
 
 ### Padding and PKCS #7
 
-Some block cipher modes like ECB and Cipher Feedback mode require the length of the plaintext to be an exact multiple of the block size for the cipher used; in these cases, we may need to add padding to the plaintext [2]. For example, assume that $`P `$ is our plaintext, $` L(P) `$ is the byte-length of the plaintext, and _b_ is the block size in bytes of the cipher used. We determine the number of padding bytes _n_ such that $` n + L(P) \equiv 0 \pmod{b}`$
+Some block cipher modes like ECB and Cipher Feedback mode require the length of the plaintext to be an exact multiple of the block size for the cipher used; in these cases, we may need to add padding to the plaintext [2]. For example, assume that $`P `$ is our plaintext, $` L(P) `$ is the byte-length of the plaintext, and $` b `$ is the block size in bytes of the cipher used. 
+
+We determine the number of padding bytes _n_ such that $` n + L(P) \equiv 0 \pmod{b}`$, meaning the plaintext with padding must be a multiple of the block size. This is the theory behind PKCS #7 [3]. PKCS #7 is one of the most popular padding schemes, according the the Cryptopals authors. 
 
 ## References
 
@@ -36,6 +38,7 @@ Some block cipher modes like ECB and Cipher Feedback mode require the length of 
 
 [2] Paar, Pelzl. (2010). p. 124.
 
+[3] RFC 5652: Cryptographic Message Syntax (CMS). (2009). IETF Datatracker. https://datatracker.ietf.org/doc/html/rfc5652#section-6.3
 
 ## Exercises for set 2
 
