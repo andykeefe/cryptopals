@@ -16,6 +16,8 @@ Block ciphers can be used in some hash functions. For example, the Davies-Meyer 
 
 ![image](https://github.com/andykeefe/andykeefe/assets/154836099/5c5097d0-defb-411a-ac74-aa32f22d187e)
 
+### Modes
+
 The exercises in this set revolve mainly around ECB and CBC modes of encryption. ECB is weaker than CBC. ECB is highly deterministic; identical plaintext blocks result in identical ciphertext blocks. The classic example of this uses an image of Tux, the Linux mascot, and encrypts it in ECB mode. In Shannon's terms, this encryption mode is weak when it comes to diffusion; the statistical properties of the plaintext are not adequately obscured in the ciphertext.
 
 ![image](https://github.com/andykeefe/andykeefe/assets/154836099/4ac81e17-b078-493f-b094-3cc15ce13d05)
@@ -24,9 +26,15 @@ CBC mode is safer. The encryption of a the first block includes an initializatio
 
 ![image](https://github.com/andykeefe/andykeefe/assets/154836099/a0796044-f6cc-40c1-b043-7f03fcbe42b7)
 
+### Padding and PKCS #7
+
+Some block cipher modes like ECB and Cipher Feedback mode require the length of the plaintext to be an exact multiple of the block size for the cipher used; in these cases, we may need to add padding to the plaintext [2]. For example, assume that $`P `$ is our plaintext, $` L(P) `$ is the byte-length of the plaintext, and _b_ is the block size in bytes of the cipher used. We determine the number of padding bytes _n_ such that $` n + L(P) \equiv 0 \pmod{b}`$
+
 ## References
 
 [1] Paar, C., & Pelzl, J. (2010). _Understanding Cryptography_. p. 58.
+
+[2] Paar, Pelzl. (2010). p. 124.
 
 
 ## Exercises for set 2
