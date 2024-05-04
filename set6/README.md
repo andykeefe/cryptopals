@@ -54,9 +54,44 @@ You can see that the digital signature scheme for RSA has about the same set up 
 
 ### DSA
 
+DSA was originally constrained to key length between 512 and 1024 bits; the key length has increased in accordance with improved cryptanalysis, but let's assume that 1024 is the standard. DSA involves two cyclic groups. The large cyclic group $`Z^*_p`$, derived from a 1024-bit prime, has an order of 1024 bits in length and is the main computational space for generating signatures, and a smaller subgroup $` Z^*_p `$ is determined by a prime $`q`$ with a typical bit length of 160 bits. These values will yield a signature with 320 bit length.
+
+Now we'll look at the key generation, signature generation, and signature verification schemes for DSA with bit length 1024.
+
+1. Key generation
+- Generate prime $`p`$ such that $` 2^{1023} < p < 2^{1024} `$
+- Generate prime divisor $`q`$ of $` p - 1 `$ such that $` 2^{159} < q < 2^{160} `$
+- Find an element $`\alpha `$ such that $`\alpha`$ generates subgroup with $`q`$ elements, meaning $`ord(\alpha) = q`$
+- Choose random integer $`d`$ such that $` 0 < d < q `$
+- Compute $`\beta \equiv \alpha ^d \mod p`$
+- Public key $`k_{pub} = (p, q, \alpha, \beta)`$
+- Private key $`k_{pr} = (d) `$
+
+2. Signature generation
+- Choose integer as random ephemeral key $`k_E`$ such that $` 0 < k_E < q`$
+- Calculate $` r \equiv (\alpha^{k_e} \mod p) \mod q`$
+- Calculate $` s \equiv (SHA(x) + dr)k_e^{-1} \mod q`$, where, in this case, $`SHA`$ is the SHA-1 hash algorithm
+
+3. Signature verification
+- Calculate auxillary value $` w \equiv s^{-1} \mod q`$
+- Calculate auxillary value $`u_1 \equiv w \cdot SHA(x) \mod q`$
+- Calculate auxillary value $` u_2 \equiv w \cdot r \mod q`$
+- Calculate $` v \equiv (\alpha^{u_1} \beta^{u_2} \mod p)\mod q `$
+- Verification $`ver_{k_{pub}}(x(r, s))`$ is result of:
+  - $`v \equiv r \mod q \implies `$ valid signature, signature accepted
+  - $` v \not\equiv r \mod q \implies`$ invalid signature, message or signature were modified or sender had wrong public key
+ 
+An attack on DSA could target the private key $`d`$, wherein the attacker tries to solve the discrete logarithm in the large cyclic group module $`p`$: 
+    
+  - $` d \equiv log_{\alpha} \beta \mod p`$
+
+It's also important that the ephemeral key $`k_E`$ is never reused, so for every signing operation, a new randomly chosen ephemeral key is necessary [3].
 
 
 
 ### References
 [1] Hoffstein, J., Pipher, J., & Silverman, J. (2008). _An Introduction to Mathematical Cryptography_. p. 119.
+
 [2] Hoffstein, et al. (2008). p. 441.
+
+[3] Paar, C., Pelzl, J. (2010). _Understanding Cryptography_. pp. 277-282.
