@@ -2,7 +2,7 @@
 
 _A Camel_, 1646. Cornelis Saftleven.
 
-## More Number Theoretic Cryptography
+## More Number Theoretic Cryptography: RSA, DSA, and nonces
 
 This section covers concepts related to RSA and the Digital Signature Algorithm, DSA. We briefly mentioned RSA in last set's write up in the context of integer factorization, but made no mention of DSA because while it relies on modular exponentiation and the discrete logarithm problem, it is gradually being phased out in favor of other digital signature schemes. Accordingly, FIPS 186-5 (2023) states the standard that DSA no longer be used for digital signature generation, but may be used for digital signature verification for signatures generated prior to the standard's date of implementation (2/03/2023). 
 
@@ -54,7 +54,7 @@ You can see that the digital signature scheme for RSA has about the same set up 
 
 ### Digital Signature Algorithm (DSA)
 
-DSA was originally constrained to key length between 512 and 1024 bits; the key length has increased in accordance with improved cryptanalysis, but let's assume that 1024 is the standard. DSA involves two cyclic groups. The large cyclic group $`Z^*_p`$, derived from a 1024-bit prime, has an order of 1024 bits in length and is the main computational space for generating signatures, and a smaller subgroup $` Z^*_p `$ is determined by a prime $`q`$ with a typical bit length of 160 bits. These values will yield a signature with 320 bit length.
+DSA was originally constrained to key length between 512 and 1024 bits; the key length has increased in accordance with improved cryptanalysis, but let's assume that 1024-bit is the standard. DSA involves two cyclic groups. The large cyclic group $`Z^*_p`$, derived from a 1024-bit prime, has an order of 1024 bits in length and is the main computational space for generating signatures, and a smaller subgroup $` Z^*_p `$ is determined by a prime $`q`$ with a typical bit length of 160 bits. These values will yield a signature with 320 bit length.
 
 Now we'll look at the key generation, signature generation, and signature verification schemes for DSA with bit length 1024.
 
@@ -87,6 +87,10 @@ An attack on DSA could target the private key $`d`$, wherein the attacker tries 
 
 It's also important that the ephemeral key $`k_E`$ is never reused, so for every signing operation, a new randomly chosen ephemeral key is necessary [3].
 
+### Nonces
+
+A "nonce" is more than just funny British slang for sex offenders. Cryptographically speaking, a nonce, which may also be referred to as an initialization vector (IV), is a "**n**umber used **once**." The theory behind a nonce/IV is that it is a randomly generated or counter value that is unique to each use of the encryption scheme such that a duplicate plaintext message put through the encryption scheme results in a distinct ciphertext, even if the key is the same. The nonce need not be secret, but it must change each time the encryption scheme is used [4][5].
+
 
 
 ### References
@@ -95,3 +99,7 @@ It's also important that the ephemeral key $`k_E`$ is never reused, so for every
 [2] Hoffstein, et al. (2008). p. 441.
 
 [3] Paar, C., Pelzl, J. (2010). _Understanding Cryptography_. pp. 277-282.
+
+[4] Boura, C., & Naya-Plasencia, M. (2024). _Symmetric Cryptography, Volume 1: Design and Security Proofs_. p. 74
+
+[5] Paar and Pelzl. 2010. p. 48.
