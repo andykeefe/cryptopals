@@ -31,7 +31,7 @@ This set of cryptopals exercises contains one focused on the MD4 hash function (
 
 ## Message Authentication Codes
 
-Schneier(2015) defines a message authentication code (MAC) as a "key-dependent one way hash function" [4].
+Schneier (2015) defines a message authentication code (MAC) as a "key-dependent one way hash function" [4].
 
 ### References
 
