@@ -3,8 +3,7 @@
 _Stamp Seal Inscribed for Amenhotep I_, New Kingdom, 1525-1504 BCE
 
 
-Stream Cryptography and Randomness
-------------------------------------------------
+# Stream Cryptography and Randomness
 
 This set is the last focused on block cipher cryptography, and also covers message authentication codes. We've already covered block and stream ciphers, CTR and CBC mode, and a little about initialization vectors, so this write up will focus on authentication, MAC, and hashing algorithms.
 
