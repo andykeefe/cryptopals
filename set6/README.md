@@ -70,7 +70,7 @@ Now we'll look at the key generation, signature generation, and signature verifi
 2. Signature generation
 - Choose integer as random ephemeral key $`k_E`$ such that $` 0 < k_E < q`$
 - Calculate $` r \equiv (\alpha^{k_e} \mod p) \mod q`$
-- Calculate $` s \equiv (SHA(x) + dr)k_e^{-1} \mod q`$, where, in this case, $`SHA`$ is the SHA-1 hash algorithm
+- Calculate $` s \equiv (SHA(x) + d \cdot r)k_e^{-1} \mod q`$, where, in this case, $`SHA`$ is the SHA-1 hash algorithm
 
 3. Signature verification
 - Calculate auxillary value $` w \equiv s^{-1} \mod q`$
