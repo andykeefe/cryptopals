@@ -42,7 +42,7 @@ We can construct a MAC using a block cipher by using the CBC-MAC technique. The 
 
 ![Untitled drawing (1)](https://github.com/andykeefe/cryptopals/assets/154836099/3aa00614-f4d9-4947-8030-6cdbd5223376)
 
-A common block cipher used in CBC-MAC techniques is AES. It should be noted that CBC-MAC is not an NIST-approved authentication mode in and of itself, but does approve of it being used in Counter with Cipher Block Chaining-Message Authentication Code (CCM) [6].
+A common block cipher used in CBC-MAC techniques is AES. It should be noted that CBC-MAC is not an NIST-approved authentication mode in and of itself because of "security deficiencies"[6], but does approve of it being used in Counter with Cipher Block Chaining-Message Authentication Code (CCM) technique [7].
 
 ### References
 
@@ -56,4 +56,6 @@ A common block cipher used in CBC-MAC techniques is AES. It should be noted that
 
 [5] Paar, C. and Pelzl, J. (2010). _Understanding Cryptography_. p. 320.
 
-[6] National Institute of Standards and Technology. (2004). _Recommendation for Block Cipher Modes of Operation: The CCM Mode for Authentication and Confidentiality_. NIST SP 800-38C.
+[6] National Institute of Standards and Technology. (2005). _Recommendation for Block Cipher Modes of Operation: The CMAC Mode for Authentication_. NIST SP 800-38B.
+
+[7] National Institute of Standards and Technology. (2004). _Recommendation for Block Cipher Modes of Operation: The CCM Mode for Authentication and Confidentiality_. NIST SP 800-38C.
