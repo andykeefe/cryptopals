@@ -15,8 +15,9 @@ _**Encryption and Decryption with RSA**_
 The security of the RSA algorithm resides in the difficulty of solving equations in the form $` x^e \equiv c \pmod n `$. $` e `$, $` c `$ and $`n `$ are all known; only $`x `$ is unknown. Let's illustrate the RSA cryptoscheme using two parties, Alice and Bob. Alice and Bob want to establish communication with one another.
 
 1. Alice will pursue _key generation_.
-- First she chooses _secret primes_, $` p `$ and $` q `$
-- Then she chooses an _encryption exponent_ $` e `$ such that $` gcd(e, (p - 1)(q - 1) = 1 `$
+- First she chooses _secret primes_, $` p `$ and $` q `$ to derive $`N`$
+- Then she chooses an _encryption exponent_ $` e `$ such that $` gcd(e, (p - 1)(q - 1)) = 1 `$
+  - This may also be written as $` gcd(e, \phi (N))) = 1 `$. This represents Euler's totient function which counts the number of integers less than $`N`$ that are relatively prime to $`N`$.
 - Finally, she publishes the semi-prime $`N = pq `$, being sure to discard $`p`$ and $`q`$, and $`e `$. Her public key is $`(N, e)`$
 
 2. Bob will pursue _encryption_.
@@ -39,8 +40,9 @@ _**Digital Signatures with RSA**_
 The digital signature scheme with RSA is quite similar to the RSA encryption scheme. We'll use an example to illustrate their similarities. Patti is receiving a signed document by Andy, but she wants to validate the authenticity of the document and of Andy's identity.
 
 1. Andy pursues _key generation_.
-- Andy chooses secret primes $`p`$ and $`q`$
+- Andy chooses secret primes $`p`$ and $`q`$ to derive $`N`$
 - Then he chooses a _verification exponent_ $`v`$ such that $`gcd(v, (p-1)(q-1)) = 1 `$
+  - This may also be written as $`gcd(v, \phi (N)) = 1 `$
 - Finally he publishes $` N = pq `$ and $`v`$
 
 2. Andy pursues _signing_ of the document
