@@ -5,7 +5,7 @@ Philibert De l’Orme, 1553. _Dome of the chapel of château d’Anet_. [From Wi
 
 # Hash Functions and Message Authentication Codes
 
-### Cryptographic hash functions
+## Cryptographic hash functions
 
 This is the first area of the problems that deals with hashes. A cryptographic hash function is one-way; just like it is easier to smash a tea cup than to put that tea cup back together, a cryptographic hash function should be easy to do but difficult to reverse. This notion of _pre-image resistance_ is easy to illustrate. Imagine a hash function $`h`$ that takes an arbitrarily sized input $`x`$, and spits out a fixed length output $`y`$, the hash value. That is,
 
@@ -29,6 +29,10 @@ FIPS 180-4 specifies several secure hash algorithms (SHA) to be used:  SHA-1, SH
 
 This set of cryptopals exercises contains one focused on the MD4 hash function (designed by Ron Rivest, one of the authors of the RSA algorithm). Security weaknesses in MD4 were first described in 1991, just a year after its introduction, and it has been illustrated to suffer from collision attacks. MD4 is therefore not a standardized hash algorithm, and should not be used in applications. This makes it a good exercise. 
 
+## Message Authentication Codes
+
+Schneier(2015) defines a message authentication code (MAC) as a "key-dependent one way hash function" [4].
+
 ### References
 
 [1] Smart, N.P. (2013). _Cryptography: An Introduction_. pp. 153-154.
@@ -37,4 +41,4 @@ This set of cryptopals exercises contains one focused on the MD4 hash function (
 
 [3] National Institute of Standards and Technology. (2022). _NIST Transitioning Away from SHA-1 for All Applications_. https://csrc.nist.gov/news/2022/nist-transitioning-away-from-sha-1-for-all-apps
 
-
+[4] Schneier, B. (2015). _Applied Cryptography_. p. 455. 
