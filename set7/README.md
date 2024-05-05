@@ -40,7 +40,9 @@ $` t = MAC_k(m)`$ where $`t`$ is the authentication tag, $`k`$ is the symmetric 
 
 We can construct a MAC using a block cipher by using the CBC-MAC technique. The message $`m`$ is split into blocks, and the first block is XORed with a block cipher using a secret key $`k`$ and produces an output. The second block is XORed with the output of the previous operation on the first block and put through the block cipher using the secret key and produces an output that will be used in the succeeding block, and so on. Here's an illustration:
 
-![Untitled drawing](https://github.com/andykeefe/cryptopals/assets/154836099/643b3f02-fd31-4a29-9ac6-49a0c7790eca)
+![Untitled drawing (1)](https://github.com/andykeefe/cryptopals/assets/154836099/3aa00614-f4d9-4947-8030-6cdbd5223376)
+
+
 
 ### References
 
