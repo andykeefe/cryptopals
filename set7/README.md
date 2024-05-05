@@ -1,4 +1,4 @@
-![Château_d'Anet_-_Anet_-_Eure-et-Loir_-_France_-_Mérimée_PA00096955_(52)](https://github.com/andykeefe/cryptopals/assets/154836099/ac007f56-7131-4a58-be4d-d729f1cf0bed)
+![Untitled drawing](https://github.com/andykeefe/cryptopals/assets/154836099/fbd49d9e-1ce2-41ab-8274-4be40811a4d1)![Château_d'Anet_-_Anet_-_Eure-et-Loir_-_France_-_Mérimée_PA00096955_(52)](https://github.com/andykeefe/cryptopals/assets/154836099/ac007f56-7131-4a58-be4d-d729f1cf0bed)
 
 Philibert De l’Orme, 1553. _Dome of the chapel of château d’Anet_. [From Wikimedia user "Binche".](https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_d%27Anet_-_Anet_-_Eure-et-Loir_-_France_-_M%C3%A9rim%C3%A9e_PA00096955_(52).jpg)
 
@@ -31,7 +31,17 @@ This set of cryptopals exercises contains one focused on the MD4 hash function (
 
 ## Message Authentication Codes
 
-Schneier (2015) defines a message authentication code (MAC) as a "key-dependent one way hash function" [4].
+Schneier (2015) defines a message authentication code (MAC) as a "key-dependent one way hash function" [4]. The MAC is computed as a function of the message and a symmetric key. Paar and Pelzil (2010) use the following notation for MAC functions:
+
+$` t = MAC_k(m)`$ where $`t`$ is the authentication tag, $`k`$ is the symmetric key, and $`m`$ is the message [5]. 
+
+### CBC-MAC
+
+We can construct a MAC using a block cipher by using the CBC-MAC technique. The message $`m`$ is split into blocks, and the first block is XORed with a block cipher using a secret key $`k`$ and produces an output. The second block is XORed with the output of the previous operation on the first block and put through the block cipher using the secret key and produces an output that will be used in the succeeding block, and so on. Here's an illustration:
+
+![Untitled drawing](https://github.com/andykeefe/cryptopals/assets/154836099/a5167bf8-cfe8-4447-b553-9a437734f159)
+
+
 
 ### References
 
@@ -42,3 +52,5 @@ Schneier (2015) defines a message authentication code (MAC) as a "key-dependent 
 [3] National Institute of Standards and Technology. (2022). _NIST Transitioning Away from SHA-1 for All Applications_. https://csrc.nist.gov/news/2022/nist-transitioning-away-from-sha-1-for-all-apps
 
 [4] Schneier, B. (2015). _Applied Cryptography_. p. 455. 
+
+[5] Paar, C. and Pelzl, J. (2010). _Understanding Cryptography_. p. 320.
