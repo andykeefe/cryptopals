@@ -89,7 +89,7 @@ It's also important that the ephemeral key $`k_E`$ is never reused, so for every
 
 ### Nonces
 
-A "nonce" is more than just funny British slang for sex offenders. Cryptographically speaking, a nonce, which may also be referred to as an initialization vector (IV), is a "**n**umber used **once**." The theory behind a nonce/IV is that it is a randomly generated or counter value that is unique to each use of the encryption scheme such that a duplicate plaintext message put through the encryption scheme results in a distinct ciphertext, even if the key is the same. The nonce need not be secret, but it must change each time the encryption scheme is used [4][5].
+A "nonce" is more than just funny British slang for sex offenders. Cryptographically speaking, a nonce, which may also be referred to as an initialization vector (IV), is a "**n**umber used **once**." The theory behind a nonce/IV is that it is a randomly generated or counter-generated value that is unique to each use of the encryption scheme such that a duplicate plaintext message put through the encryption scheme results in a distinct ciphertext, even if the key is the same. The nonce need not be secret, but it must change each time the encryption scheme is used [4][5].
 
 
 
