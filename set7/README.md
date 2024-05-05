@@ -38,11 +38,11 @@ $` t = MAC_k(m)`$ where $`t`$ is the authentication tag, $`k`$ is the symmetric 
 
 ### CBC-MAC
 
-We can construct a MAC using a block cipher by using the CBC-MAC technique. The message $`m`$ is split into blocks, and the first block is XORed with a block cipher using a secret key $`k`$ and produces an output. The second block is XORed with the output of the previous operation on the first block and put through the block cipher using the secret key and produces an output that will be used in the succeeding block, and so on. Here's an illustration:
+We can construct a MAC using a block cipher by using the CBC-MAC technique. The message $`m`$ is split into blocks, and the first block is XORed with a block cipher $`E`$ using a secret key $`k`$ and produces an output. The second block is XORed with the output of the previous operation on the first block and put through the block cipher using the secret key and produces an output that will be used in the succeeding block, and so on. Here's an illustration:
 
 ![Untitled drawing (1)](https://github.com/andykeefe/cryptopals/assets/154836099/3aa00614-f4d9-4947-8030-6cdbd5223376)
 
-
+A common block cipher used in CBC-MAC techniques is AES. It should be noted that CBC-MAC is not an NIST-approved authentication mode in and of itself, but does approve of it being used in Counter with Cipher Block Chaining-Message Authentication Code (CCM) [6].
 
 ### References
 
@@ -55,3 +55,5 @@ We can construct a MAC using a block cipher by using the CBC-MAC technique. The 
 [4] Schneier, B. (2015). _Applied Cryptography_. p. 455. 
 
 [5] Paar, C. and Pelzl, J. (2010). _Understanding Cryptography_. p. 320.
+
+[6] National Institute of Standards and Technology. (2004). _Recommendation for Block Cipher Modes of Operation: The CCM Mode for Authentication and Confidentiality_. NIST SP 800-38C.
