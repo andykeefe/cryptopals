@@ -17,7 +17,7 @@ The security of the RSA algorithm resides in the difficulty of solving equations
 1. Alice will pursue _key generation_.
 - First she chooses _secret primes_, $` p `$ and $` q `$ to derive $`N`$
 - Then she chooses an _encryption exponent_ $` e `$ such that $` gcd(e, (p - 1)(q - 1)) = 1 `$
-  - This may also be written as $` gcd(e, \phi (N))) = 1 `$. This represents Euler's totient function which counts the number of integers less than $`N`$ that are relatively prime to $`N`$.
+  - This may also be written as $` gcd(e, \phi (N)) = 1 `$. This represents Euler's totient function which counts the number of integers less than $`N`$ that are relatively prime to $`N`$.
 - Finally, she publishes the semi-prime $`N = pq `$, being sure to discard $`p`$ and $`q`$, and $`e `$. Her public key is $`(N, e)`$
 
 2. Bob will pursue _encryption_.
