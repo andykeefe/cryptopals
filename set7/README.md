@@ -1,4 +1,5 @@
-![Untitled drawing](https://github.com/andykeefe/cryptopals/assets/154836099/fbd49d9e-1ce2-41ab-8274-4be40811a4d1)![Château_d'Anet_-_Anet_-_Eure-et-Loir_-_France_-_Mérimée_PA00096955_(52)](https://github.com/andykeefe/cryptopals/assets/154836099/ac007f56-7131-4a58-be4d-d729f1cf0bed)
+![Château_d'Anet_-_Anet_-_Eure-et-Loir_-_France_-_Mérimée_PA00096955_(52)](https://github.com/andykeefe/cryptopals/assets/154836099/830c753a-9d42-4bd3-907a-23c4d217d638)
+
 
 Philibert De l’Orme, 1553. _Dome of the chapel of château d’Anet_. [From Wikimedia user "Binche".](https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_d%27Anet_-_Anet_-_Eure-et-Loir_-_France_-_M%C3%A9rim%C3%A9e_PA00096955_(52).jpg)
 
@@ -39,9 +40,7 @@ $` t = MAC_k(m)`$ where $`t`$ is the authentication tag, $`k`$ is the symmetric 
 
 We can construct a MAC using a block cipher by using the CBC-MAC technique. The message $`m`$ is split into blocks, and the first block is XORed with a block cipher using a secret key $`k`$ and produces an output. The second block is XORed with the output of the previous operation on the first block and put through the block cipher using the secret key and produces an output that will be used in the succeeding block, and so on. Here's an illustration:
 
-![Untitled drawing](https://github.com/andykeefe/cryptopals/assets/154836099/a5167bf8-cfe8-4447-b553-9a437734f159)
-
-
+![Untitled drawing](https://github.com/andykeefe/cryptopals/assets/154836099/643b3f02-fd31-4a29-9ac6-49a0c7790eca)
 
 ### References
 
