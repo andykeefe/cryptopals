@@ -4,7 +4,7 @@
 _Perspectival Drawing with Three Cubes_ by Peter Flötner, 1528
 
 
-## Block Cipher Cryptography
+# Block Cipher Cryptography
 
 This section covers cryptography most commonly used in the web: block ciphers. Block ciphers encrypt each block of plaintext with the same key. The length of the block depends on the cipher. For example, AES uses 128 bit length blocks, while DES uses 64 bit length blocks. 
 
