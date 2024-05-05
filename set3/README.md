@@ -3,7 +3,7 @@
 _Ciphers and Constellations in Love with a Woman_ by Joan Miró, 1941
 
 
-## Block and Stream Cryptography
+# Block and Stream Cryptography
 
 More block ciphers! Aren't you overjoyed?
 
