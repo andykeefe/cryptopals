@@ -2,7 +2,7 @@
 
 _A Camel_, 1646. Cornelis Saftleven.
 
-## More Number Theoretic Cryptography: RSA, DSA, and nonces
+# More Number Theoretic Cryptography: RSA, DSA, and nonces
 
 This section covers concepts related to RSA and the Digital Signature Algorithm, DSA. We briefly mentioned RSA in last set's write up in the context of integer factorization, but made no mention of DSA because while it relies on modular exponentiation and the discrete logarithm problem, it is gradually being phased out in favor of other digital signature schemes. Accordingly, FIPS 186-5 (2023) states the standard that DSA no longer be used for digital signature generation, but may be used for digital signature verification for signatures generated prior to the standard's date of implementation (2/03/2023). 
 
