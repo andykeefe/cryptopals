@@ -49,6 +49,7 @@ if __name__ == '__main__':
             challenge8_enumerate.py in this set. 
 
         """
+        
         block_num = len(line_ct) // BLOCK_SIZE
         
         unique_blocks = len(set(chunks(line_ct, BLOCK_SIZE)))
