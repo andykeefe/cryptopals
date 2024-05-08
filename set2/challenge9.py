@@ -6,12 +6,6 @@ def pkcs7_padding(byte_plaintext: bytes, block_size: int = 16) -> bytes:
 
     return byte_plaintext + bytes([padding]) * padding
 
-    """ 
-
-
-
-    """
-
 
 if __name__ == '__main__':
     plaintext = b'YELLOW SUBMARINE'
