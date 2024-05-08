@@ -4,7 +4,7 @@ Throughout the blurbs I write for each set of problems, I often make reference t
 
 There are a few cases where a book I've referenced is not in this list; in that case, just search for the book on the Internet if you wish to know more.
 
-Lastly, the vast majority of these books are very "academic." They're laborious to get through, and even tougher to understand if you're background on mathematics and computer science is minimal. Believe me, for I am you. For this reason, I'll include more "pop" cryptography books for the general reader, and I'll go further to annotate why I think these books are just as useful for the lay person in terms of getting an understanding of cryptography. 
+Lastly, the vast majority of these books are very "academic." They're laborious to get through, and even tougher to understand if you're background on mathematics and computer science is minimal. Believe me, for I am you. For this reason, I'll include more "pop" cryptography books for the general reader, and I'll go further to annotate why I think these books are just as useful for the lay person in terms of getting an understanding of cryptography. Most should be available through your library or through an inter-library loan.
 
 ### General cryptography
 
@@ -61,6 +61,12 @@ Lastly, the vast majority of these books are very "academic." They're laborious 
 
 - Dunin, E., Schmeh, K. (2023) _Codebraking: A Practical Guide_.
   - [_Codebreaking: A Practical Guide_](https://nostarch.com/codebreaking)
+  - Mostly deals with "classical" cryptography, the kind of stuff that was done through history like Caesar ciphers and Vigenere ciphers, the kind of stuff that was done by hand. Maybe not useful for today's highly esoteric algorithms, but still a great book for appreciating the history of cryptography and the rigors of classical cryptanalysis.
  
 - Martin, K. (2020). _Cryptography: The Key to Digital Security, How it Works, and Why It Matters_.
   - [_Cryptography: The Key to Digital Security..._](https://wwnorton.com/books/9780393867459)
+  - No math in this book, but does an excellent job at plainly explaining a _huge_ range of cryptographic concepts like bits and bytes, what a key is, how a block cipher works, popular algorithms, and a bunch of other stuff. Good book for a qualitative overview of a heavily quantitative field. 
+ 
+- Singh, S. (1999). _The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography_.
+  - [_The Code Book_](https://www.penguinrandomhouse.com/books/168002/the-code-book-by-simon-singh/)
+  - Bit of an older book here, but still useful for explaining the history of cryptography. No mentions of AES, it didn't exist yet, but does go quite a bit into public-key algorithms and RSA. One of the most crucial points is that cryptanalysis is always getting better, and there is no guarantee that the algorithms of today will not be vulnerable in 5, 10, 20 years. I haven't picked this book up in awhile but I know it mention post-quantum cryptography a bit.
