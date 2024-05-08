@@ -1,3 +1,12 @@
+def main():
+    with open("program_data/8.txt") as f:
+        ct_lines = [line.strip() for line in f]
+
+    for index, line in enumerate(ct_lines):
+        print(f"Index: {index}, Line: {line}")
+
+main()
+
 """ 
 
     This program prints out enumerated lines from 8.txt challenge data. This
@@ -9,13 +18,3 @@
     purposes.
 
 """
-
-def main():
-    with open("program_data/8.txt") as f:
-        ct_lines = [line.strip() for line in f]
-
-    for index, line in enumerate(ct_lines):
-        print(f"Index: {index}, Line: {line}")
-
-
-main()
