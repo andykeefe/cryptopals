@@ -16,6 +16,9 @@ Lastly, the vast majority of these books are very "academic." They're laborious 
  
 - Ferguson, N., Schneier, B., & Kohno, T. (2010). _Cryptography Engineering: Design Principles and Practical Applications._
   - [_Cryptography Engineering_](https://onlinelibrary.wiley.com/doi/book/10.1002/9781118722367)
+ 
+- McKay, D.J.C. (2003). _Information Theory, Inference, and Learning Algorithms_.
+  - [_Information Theory, Inference, and learning Algorithms_](https://www.amazon.com/Information-Theory-Inference-Learning-Algorithms/dp/0521642981)
 
 - Paar, C., Palzl, J. (2010). _Understanding Cryptography_.
   - [_Understanding Cryptography_](https://link.springer.com/book/10.1007/978-3-642-04101-3)
