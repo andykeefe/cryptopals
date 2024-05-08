@@ -45,6 +45,9 @@ if __name__ == '__main__':
             >>> list(enumerate(seasons))
             [(0, 'Spring'), (1, 'Summer'), (2, 'Winter'), (3, 'Fall')]
 
+            For a real illustration of how this functions in the context of this program, see
+            challenge8_enumerate.py in this set. 
+
         """
         block_num = len(line_ct) // BLOCK_SIZE
         
