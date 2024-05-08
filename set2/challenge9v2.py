@@ -1,9 +1,13 @@
 from Crypto.Util.Padding import pad, unpad
+
 """
 
     Padding with PyCryptodome is pretty simple, but takes away
     a lot of the mathematical logic used in the first version of
-    this challenge. 
+    this challenge. I'd recommend analyzing that first version to
+    get an understanding of padding in terms of modular arithmetic
+    because it's always good to practice and apply mathematical 
+    concepts when it comes to cryptography.
 
     I didn't write this code on my native machine so I'm not able
     to test it out yet, but I'm 95% sure it'll work when I access
