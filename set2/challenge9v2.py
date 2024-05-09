@@ -2,9 +2,9 @@ from Crypto.Util.Padding import pad, unpad
 
 """
 
-    Same program as v2 but with the pad and unpad functions contained
+    Same program but with the pad and unpad functions contained
     in user-defined functions pad_pkcs7() and unpad_pkcs7() with type
-    annotations.
+    annotations, and use of Py-Cryptodome
 
 """
 
