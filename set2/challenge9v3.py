@@ -22,7 +22,7 @@ if __name__ == '__main__':
     
     plaintext = b'YELLOW SUBMARINE'
     pad_pt = pad_pkcs7(plaintext, 20)
-    unpad_pt = unpad_pkcs7(pad_pt, 16)
+    unpad_pt = unpad_pkcs7(pad_pt, len(pad_pt))
     
     if unpad_pt == plaintext:
         print(f"{pad_pt=}")
