@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     """
     
-    unpad_pt = unpad(pad_pt, len(plaintext), style='pkcs7')
+    unpad_pt = unpad(pad_pt, len(pad_pt), style='pkcs7')
 
     """ 
 
