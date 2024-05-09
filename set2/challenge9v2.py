@@ -17,7 +17,7 @@ from Crypto.Util.Padding import pad, unpad
 
 if __name__ == '__main__':
     plaintext = b'YELLOW SUBMARINE'
-    pad_pt = pad(plaintext, 20, 'pkcs7')
+    pad_pt = pad(plaintext, 20, style='pkcs7')
     
     """
 
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     """
     
-    unpad_pt = unpad(pad_pt, len(plaintext), 'pkcs7')
+    unpad_pt = unpad(pad_pt, len(plaintext), style='pkcs7')
 
     """ 
 
