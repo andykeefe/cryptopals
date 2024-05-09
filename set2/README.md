@@ -26,6 +26,11 @@ CBC mode is safer. The encryption of a the first block includes an initializatio
 
 ![image](https://github.com/andykeefe/andykeefe/assets/154836099/a0796044-f6cc-40c1-b043-7f03fcbe42b7)
 
+Challenge 10 has us decrypt a text in CBC mode. 
+
+![Untitled drawing](https://github.com/andykeefe/cryptopals/assets/154836099/d01a25c7-b068-4b5a-9220-372ee90f7279)
+
+
 ### Padding and PKCS #7
 
 Some block cipher modes like ECB and Cipher Feedback mode require the length of the plaintext to be an exact multiple of the block size for the cipher used; in these cases, we may need to add padding to the plaintext [2]. For example, assume that $`P `$ is our plaintext, $` L(P) `$ is the byte-length of the plaintext, and $` b `$ is the block size in bytes of the cipher used. 
