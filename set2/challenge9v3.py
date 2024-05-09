@@ -21,14 +21,12 @@ def unpad_pkcs7(padded: bytes, block_size: int) -> bytes:
 if __name__ == '__main__':
     
     plaintext = b'YELLOW SUBMARINE'
-    
     pad_pt = pad_pkcs7(plaintext, 20)
     unpad_pt = unpad_pkcs7(pad_pt, 16)
     
     if unpad_pt == plaintext:
         print(f"{pad_pt=}")
         print(f"{unpad_pt=}")
-        print("\nSuccess, PKCS7 implemented properly.\n")
-        
+        print("\nSuccess, PKCS7 implemented properly.\n")    
     else:
         print("Error. PKCS7 not implemented properly.")
