@@ -22,7 +22,7 @@ The exercises in this set revolve mainly around ECB and CBC modes of encryption.
 
 ![image](https://github.com/andykeefe/andykeefe/assets/154836099/4ac81e17-b078-493f-b094-3cc15ce13d05)
 
-CBC mode is safer. The encryption of a the first block includes an initialization vector (IV) that is XORed with the plaintext block. All subsequent plaintext block are XORed with the previously encrypted block, and so on. So the first ciphertext depends on the plaintext and IV; the second ciphertext depends on the second plaintext, the first plaintext, and the IV. The third ciphertext depends on the third, second, and first plaintext and the IV, and so on.
+CBC mode is safer. The encryption of a the first block includes an initialization vector (IV) that is XORed with the plaintext block. All subsequent plaintext block are XORed with the previously encrypted block, and so on. So the first ciphered block depends on the plaintext and IV; the second ciphered block depends on the second plaintext, the first ciphered block, and the IV. The third ciphered block depends on the third plaintext, the second and first ciphered block, and the IV, and so on.
 
 ![image](https://github.com/andykeefe/andykeefe/assets/154836099/a0796044-f6cc-40c1-b043-7f03fcbe42b7)
 
