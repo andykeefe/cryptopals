@@ -1,3 +1,8 @@
+![800px-Aeneas_cipher_disc,_5th_century_BC,_Greece_(reconstruction)](https://github.com/andykeefe/cryptopals/assets/154836099/8c771027-0203-4925-81fe-c297b8803e61)
+
+_Aeneas Tacticus cipher disc_, 5th century BC. Thessaloniki Technology Museum.
+
+
 # Cryptography Books
 
 Throughout the blurbs I write for each set of problems, I often make reference to various texts. This section has a nearly complete list of texts referenced, or texts that I think are useful in understanding the topics but aren't explicitly stated. Think of it as a quick bibliography to tap into if you want to go deeper into these topics.
