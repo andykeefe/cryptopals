@@ -49,7 +49,6 @@ PKCS #7 is one of the most popular padding schemes, according the the Cryptopals
 
 ## Exercises for set 2
 
-
 1. Implement PKCS#7 padding
 2. Implement CBC mode
 3. An ECB/CBC detection oracle
@@ -58,3 +57,9 @@ PKCS #7 is one of the most popular padding schemes, according the the Cryptopals
 6. Byte-at-a-time ECB decryption (Harder)
 7. PKCS#7 padding validation
 8. CBC bitflipping attacks
+
+------------------
+
+I've run into a bit of a challenge for this set. My cryptopals exercises are categorized by which ever set they're in. I have a directory /cryptopals that has subdirectories for each set, /set1, /set2, etc. 
+
+Because of this, I'm unable to typically import functions from previous exercises like I was able to do in set one, simply using from <module> import <function>. I'm exploring workarounds, and once I have access to my machine again I will try to change the PYTHONPATH environment variable to include the cryptopals directory. This should allow me to import functions from set1 to be used in set2 exercises. 
