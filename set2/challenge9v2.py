@@ -4,7 +4,11 @@ from Crypto.Util.Padding import pad, unpad
 
     Same program but with the pad and unpad functions contained
     in user-defined functions pad_pkcs7() and unpad_pkcs7() with type
-    annotations, and use of Py-Cryptodome
+    annotations, and use of Py-Cryptodome.
+
+    Because v1 doesn't use PyCryptodome, it has a bit more of the 
+    mathematical logic behind padding in the code, specifically
+    modular arithmetic
 
 """
 
