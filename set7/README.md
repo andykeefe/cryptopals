@@ -1,8 +1,6 @@
-![Château_d'Anet_-_Anet_-_Eure-et-Loir_-_France_-_Mérimée_PA00096955_(52)](https://github.com/andykeefe/cryptopals/assets/154836099/830c753a-9d42-4bd3-907a-23c4d217d638)
+![default](https://github.com/andykeefe/cryptopals/assets/154836099/239740ff-4d37-4788-abb8-a76bc6d07f4f)
 
-
-Philibert De l’Orme, 1553. _Dome of the chapel of château d’Anet_. [From Wikimedia user "Binche".](https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_d%27Anet_-_Anet_-_Eure-et-Loir_-_France_-_M%C3%A9rim%C3%A9e_PA00096955_(52).jpg)
-
+_The Checkerboard_, 1915. Juan Gris.
 
 # Hash Functions and Message Authentication Codes
 
