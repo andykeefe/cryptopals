@@ -69,7 +69,7 @@ Lastly, the vast majority of these books are very "academic." They're laborious 
 
 - Dunin, E., Schmeh, K. (2023) _Codebraking: A Practical Guide_.
   - [_Codebreaking: A Practical Guide_](https://nostarch.com/codebreaking)
-  - Mostly deals with "classical" cryptography, the kind of stuff that was done through history like Caesar ciphers and Vigenere ciphers, the kind of stuff that was done by hand. Maybe not useful for today's highly esoteric algorithms, but still a great book for appreciating the history of cryptography and the rigors of classical cryptanalysis.
+  - Mostly deals with "classical" cryptography, like Caesar ciphers and Vigenere ciphers, the kind of stuff that was done by hand. Maybe not useful for today's robust, esoteric algorithms, but still a great book for appreciating the history of cryptography and the rigors of classical cryptanalysis.
  
 - Martin, K. (2020). _Cryptography: The Key to Digital Security, How it Works, and Why It Matters_.
   - [_Cryptography: The Key to Digital Security..._](https://wwnorton.com/books/9780393867459)
