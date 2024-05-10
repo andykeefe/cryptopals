@@ -6,7 +6,7 @@ _The Checkerboard_, 1915. Juan Gris.
 
 ## Cryptographic hash functions
 
-This is the first area of the problems that deals with hashes. A cryptographic hash function is one-way; just like it is easier to smash a tea cup than to put that tea cup back together, a cryptographic hash function should be easy to do but difficult to reverse. This notion of _pre-image resistance_ is easy to illustrate. Imagine a hash function $`h`$ that takes an arbitrarily sized input $`x`$, and spits out a fixed length output $`y`$, the hash value. That is,
+This is the first area of the problems that deals directly with hashes. A cryptographic hash function is one-way; just like it is easier to smash a tea cup than to put that tea cup back together, a cryptographic hash function should be easy to do but difficult to reverse. This notion of _pre-image resistance_ is easy to illustrate. Imagine a hash function $`h`$ that takes an arbitrarily sized input $`x`$, and spits out a fixed length output $`y`$, the hash value. That is,
 
 $`h(x) = y`$
 
