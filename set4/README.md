@@ -1,7 +1,8 @@
-![main-image](https://github.com/andykeefe/andykeefe/assets/154836099/3e402585-384e-4857-92a0-6e403ebb2a0b)
+![image](https://github.com/andykeefe/cryptopals/assets/154836099/bf6f6608-8169-45de-be7a-51824b591ed4)
 
-_Stamp Seal Inscribed for Amenhotep I_, New Kingdom, 1525-1504 BCE
+_Histamenon of Issac I Komenos_, 1057-1059. "The body of the emperor became a vehicle... for serving a number of socio-political tasks, such as... **guaranteeing the _authenticity_ of official documents, seals, or coins.**" 
 
+Bacci, M. and Studer-Karlen, M. (eds.). (2022). _Meanings and Functions of the Ruler's Image in the Mediterranean World (11th - 15th Centuries)_. p. 157.
 
 # Stream Cryptography and Randomness
 
