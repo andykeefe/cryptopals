@@ -52,6 +52,9 @@ def cbc(iv: bytes, key: bytes, ct: bytes) -> bytes:
             IV with the previous ciphertext block. This process repeats until
             we have iterated through the entire ciphertext. 
 
+            I'd recommend running a debugger once this program is functional
+            to get a better understanding of how CBC works. It's a lot of fun.
+
         """
     return pt
 
