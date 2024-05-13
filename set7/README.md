@@ -57,3 +57,23 @@ A common block cipher used in CBC-MAC techniques is AES. It should be noted that
 [6] National Institute of Standards and Technology. (2005). _Recommendation for Block Cipher Modes of Operation: The CMAC Mode for Authentication_. NIST SP 800-38B.
 
 [7] National Institute of Standards and Technology. (2004). _Recommendation for Block Cipher Modes of Operation: The CCM Mode for Authentication and Confidentiality_. NIST SP 800-38C.
+
+
+### Problems
+
+1. CBC-MAC Message Forgery
+
+2. Hashing with CBC-MAC
+
+3. Compression Ratio Side-Channel Attacks
+
+4. Iterated Hash Function Multicollisions
+
+5. Kelsey and Schneier's Expandable Messages
+
+6. Kelsey and Kohno's Nostradamus Attack
+
+7. MD4 Collisions
+
+8. RC4 Single-Byte Biases
+
