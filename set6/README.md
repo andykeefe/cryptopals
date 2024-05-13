@@ -105,3 +105,23 @@ A "nonce" is more than just funny British slang for sex offenders. Cryptographic
 [4] Boura, C., & Naya-Plasencia, M. (2024). _Symmetric Cryptography, Volume 1: Design and Security Proofs_. p. 74
 
 [5] Paar and Pelzl. 2010. p. 48.
+
+
+### Excercises
+
+1. Implement unpadded message recovery oracle
+
+2. Bleichenbacher's e=3 RSA Attack
+
+3. DSA key recovery from nonce
+
+4. DSA nonce recovery from repeated nonce
+
+5. DSA parameter tampering
+
+6. RSA parity oracle
+
+7. Bleichenbacher's PKCS 1.5 Padding Oracle (Simple Case)
+
+8. Bleichenbacher's PKCS 1.5 Padding Oracle (Complete Case)
+
