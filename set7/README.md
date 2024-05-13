@@ -59,7 +59,7 @@ A common block cipher used in CBC-MAC techniques is AES. It should be noted that
 [7] National Institute of Standards and Technology. (2004). _Recommendation for Block Cipher Modes of Operation: The CCM Mode for Authentication and Confidentiality_. NIST SP 800-38C.
 
 
-### Problems
+### Exercises
 
 1. CBC-MAC Message Forgery
 
