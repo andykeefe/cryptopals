@@ -80,7 +80,7 @@ def detect(func: TypeOracle) -> str:
 
     """ 
 
-        Plaintext is generated as bytes with a length of 43 bytes because 
+        Plaintext is generated as null bytes with a length of 43 bytes because 
         43 = 2*16 + (16 - 5). ciphertext is generated from oracle function.
         You can change this to a value as long as it is at least 3 blocks long.
         I chose 43 because pre and postfix will add at least 10 bytes anyway. 
