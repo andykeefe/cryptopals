@@ -31,7 +31,7 @@ TypeOracle = Callable[[bytes], bytes]
 """
 
 BLOCK_SIZE = AES.block_size  # 16 bytes
-KEY_SIZE = 16
+KEY_SIZE = 16  # standard 128-bit keys
 
 def get_oracle() -> tuple[str, TypeOracle]:
     mode = choice(("ECB", "CBC"))
