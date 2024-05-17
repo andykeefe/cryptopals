@@ -89,9 +89,9 @@ def get_oracle() -> tuple[str, TypeOracle]:
     """
 
 
-def detect(func: TypeOracle) -> str:
+def detect(function: TypeOracle) -> str:
     plaintext = bytes(2*BLOCK_SIZE + (BLOCK_SIZE - 5))
-    ciphertext = func(plaintext)
+    ciphertext = function(plaintext)
     ct_blocks = chunks(ciphertext, BLOCK_SIZE)
     if ct_blocks[1] == ct_blocks[2]:
         return "ECB"
