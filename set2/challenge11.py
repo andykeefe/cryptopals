@@ -24,8 +24,18 @@ TypeOracle = Callable[[bytes], bytes]
 
     This specifies a callable type that takes a single parameter [bytes]
     and returns a value of bytes. This is a convenient way to construct a 
-    type alias that represents the type of functions that can be used
-    as encryption oracles. 
+    type alias that represents the type of functions that can be used.
+
+    So we specify a callable object called TypeOracle. Notice that our 
+    get_oracle() returns a tuple containing a string (the mode of operation)
+    and the callable object, TypeOracle, as specified in the type annotations. 
+    Then notice that the get_oracle() function returns mode and enc_oracle.
+    In this case, enc_oracle is the callable function. 
+
+    The parameter for the detect() function is specified as TypeOracle, meaning
+    we're going to call the enc_oracle function inside detect(), which is going
+    to take the initialized byte plaintext as input and return bytes encrypted
+    in whichever mode of operation was chosen.
 
 """
 
@@ -52,7 +62,7 @@ def get_oracle() -> tuple[str, TypeOracle]:
 
             urandom(size) returns a random byte string of specified size. First,
             we initialize 16 random bytes according to our key size. For the pre-
-            fix, we use randint(a. b), which returns a number N such that
+            fix, we use randint(a, b), which returns a number N such that
             a <= N <= b. So we return a collection of random bytes of a size 
             between 5 and 10 bytes. We do the same for the post-fix.
 
