@@ -36,17 +36,38 @@ KEY_SIZE = 16
 def get_oracle() -> tuple[str, TypeOracle]:
     mode = choice(("ECB", "CBC"))
 
+    """
+
+        choice(seq) returns a random element from the non-empty seq. In 
+        this case, seq is two modes: ECB and CBC. The mode is randomly chosen
+        from these two elements.
+
+    """
+
     def enc_oracle(plaintext: bytes) -> bytes:
         key = urandom(KEY_SIZE)
         pre = urandom(randint(5, 10))
         post = urandom(randint(5, 10))
+
+        """
+
+            urandom(size) returns a random byte string of specified size. First,
+            we initialize 16 random bytes according to our key size. For the pre-
+            fix, we use randint(a. b), which returns a number N such that
+            a <= N <= b. So we return a collection of random bytes of a size 
+            between 5 and 10 bytes. We do the same for the post-fix.
+
+        """
+        
         plaintext = pad_pkcs7(pre + plaintext + post, BLOCK_SIZE)
 
         if mode == "ECB":
             cipher = AES.new(key, AES.MODE_ECB)
+            
         else:
             iv = urandom(BLOCK_SIZE)
             cipher = AES.new(key, AES.MODE_CBC, iv)
+            
         return cipher.encrypt(plaintext)
 
     return mode, enc_oracle
