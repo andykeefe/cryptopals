@@ -15,7 +15,7 @@ from set2.challenge09v2 import pad_pkcs7
 from Crypto.Cipher import AES
 from os import urandom
 from random import randint, choice
-from typing import Callable
+from collection.abc import Callable
 
 
 TypeOracle = Callable[[bytes], bytes]
