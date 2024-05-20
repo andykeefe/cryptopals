@@ -132,15 +132,23 @@ def main_decrypt(func: ECB_Oracle, suffix_length: int, view_decrypt=False) -> by
 
     """
 
-        
+        Goal is to create several ciphertexts of different lengths. We iterate over
+        16 decreasing values as inputs to our oracle_encrypt function. As n increases,
+        the number of bytes added to the _sec_suffix are decreased. 
 
+        Then take the ciphertext generated and "chunk" it into BLOCK_SIZE blocks, 16
+        byte blocks. Add each chunked ciphertext to the list of ciphertexts, ctexts.
+           
     """
     
     shifted = [block for blocks in zip(*ctexts) for block in blocks]
 
     """
 
-        
+        zip(*ctexts) is going to transpose and group blocks together such that the 
+        first block from each group of ctexts are together, second blocks are 
+        together, and so on. So the new list in the variable 'shifted' contains all
+        ciphertext blocks aligned by their position. 
 
     """
     
