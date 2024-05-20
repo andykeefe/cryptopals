@@ -25,8 +25,7 @@ def constr_oracle() -> ECB_Oracle:
         pt = pad_pkcs7(pt +_sec_suffix, BLOCK_SIZE)
         cipher = AES.new(_key, AES.MODE_ECB)
         return cipher.encrypt(pt)
-
-
+        
     return oracle_encrypt
 
 
