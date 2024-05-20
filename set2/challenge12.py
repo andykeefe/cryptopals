@@ -126,11 +126,24 @@ def detector(oracle_encrypt):
 
 
 def main_decrypt(func: ECB_Oracle, suffix_length: int, view_decrypt=False) -> bytes:
-    
     assert detector(func)
     
     ctexts = [chunks(func(bytes(15-n)), BLOCK_SIZE) for n in range(16)]
+
+    """
+
+        
+
+    """
+    
     shifted = [block for blocks in zip(*ctexts) for block in blocks]
+
+    """
+
+        
+
+    """
+    
     attack_blocks = shifted[:suffix_length]
     plain = bytes(15)
     
