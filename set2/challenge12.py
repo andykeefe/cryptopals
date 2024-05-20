@@ -28,6 +28,15 @@ def constr_oracle() -> ECB_Oracle:
         
     return oracle_encrypt
 
+""" 
+
+    oracle_encrypt is our callable function that we use to pad the ciphertext 
+    as we add bytes when trying to find the block and suffix size. Each time,
+    it takes in the added bytes (pt), appends it to the suffix (_sec_suffix),
+    pads it to a block size of 16, and returns and encrypted text.
+
+"""
+
 
 def bs_suff_length(func: ECB_Oracle) -> tuple[int, int]:
     block_size = None
@@ -44,6 +53,41 @@ def bs_suff_length(func: ECB_Oracle) -> tuple[int, int]:
     assert block_size is not None
     assert suffix_length is not None
     return block_size, suffix_length
+
+
+"""
+
+        We first initialize block_size and suffix_length variables to none. 
+        We're trying to find the block size and length of the suffix. 
+
+        We first obtain the base length of the ciphertext by passing in a single 
+        byte b'A'. Then we enter an iterative loop starting at i = 2. 
+
+        We obtain a variable length2 that takes the ciphertext and adds b'A' * i.
+        So if we're at the first iteration of the loop and the loops starts at i = 2,
+        then length2 would be the ciphertext with two b'A' appended to the beginning.
+        At the second iteration, when i = 3, we would append three b'A' to the beginning,
+        and so on. 
+
+        What we're doing here is trying to find the block size. Let's illustrate this with
+        an example.
+
+        Imagine a ciphertext is 30 bytes before padding, and has two blocks. We add a byte,
+        so now we have 31 bytes before padding, but still two blocks. We add a byte, so we
+        have 32 bytes w/o padding, and still two blocks. We add another byte so we have 33
+        bytes of text before padding, but now we have three blocks.
+
+        We can now find the block size. When we got to 33 bytes without padding, we needed to
+        add another block, and then add padding to that block. Now we see that the length of the
+        ciphertext (unpadded, 33 bytes) has been padded out to 48 bytes. Taking this length and
+        subtracting it from our intial length, which we know is 32 bytes, we get a block size of
+        16 bytes. Only when the length of the ct is greater than the initial length do we calculate
+        the block size. 
+
+        Finding the length of the suffix is simple, we just subtract the number of bytes we added,
+        i, from the initial length. 
+        
+"""
 
 
 def find_byte(pref: bytes, target: bytes, func: ECB_Oracle) -> bytes:
