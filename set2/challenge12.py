@@ -112,15 +112,15 @@ def detector(oracle_encrypt):
 
 """
 
-    Detector serves as a validator to make sure that ECB mode is being used.
-    Notice that we assert the detector function in main_decrypt, meaning that 
-    if it doesn't return True, we throw an error. 
+        Detector serves as a validator to make sure that ECB mode is being used.
+        Notice that we assert the detector function in main_decrypt, meaning that 
+        if it doesn't return True, we throw an error. 
 
-    All this function does is generate 32 null bytes, encrypt them using the 
-    oracle_encrypt function, and check that the first and second block are 
-    equal to each other, as would be the case in ECB mode (remember, ECB is 
-    highly deterministic; any statistical properties in the plaintext remain
-    in the ciphertext). 
+        All this function does is generate 32 null bytes, encrypt them using the 
+        oracle_encrypt function, and check that the first and second block are 
+        equal to each other, as would be the case in ECB mode (remember, ECB is 
+        highly deterministic; any statistical properties in the plaintext remain
+        in the ciphertext). 
 
 """
 
