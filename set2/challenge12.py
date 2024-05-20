@@ -33,7 +33,7 @@ def constr_oracle() -> ECB_Oracle:
     oracle_encrypt is our callable function that we use to pad the ciphertext 
     as we add bytes when trying to find the block and suffix size. Each time,
     it takes in the added bytes (pt), appends it to the suffix (_sec_suffix),
-    pads it to a block size of 16, and returns and encrypted text.
+    pads it to a multiple of 16, and returns an encrypted text. 
 
 """
 
@@ -86,6 +86,10 @@ def bs_suff_length(func: ECB_Oracle) -> tuple[int, int]:
 
         Finding the length of the suffix is simple, we just subtract the number of bytes we added,
         i, from the initial length. 
+
+        Once the if length2 > length condition is met, and the block and suffix size are calculated,
+        we break out of the loop, and assert that the variables are NOT None before returning the
+        block_size and suffix_length.
         
 """
 
@@ -106,6 +110,20 @@ def detector(oracle_encrypt):
         return True
     raise Exception("Something's amiss")
 
+"""
+
+    Detector serves as a validator to make sure that ECB mode is being used.
+    Notice that we assert the detector function in main_decrypt, meaning that 
+    if it doesn't return True, we throw an error. 
+
+    All this function does is generate 32 null bytes, encrypt them using the 
+    oracle_encrypt function, and check that the first and second block are 
+    equal to each other, as would be the case in ECB mode (remember, ECB is 
+    highly deterministic; any statistical properties in the plaintext remain
+    in the ciphertext). 
+
+"""
+
 
 def main_decrypt(func: ECB_Oracle, suffix_length: int, view_decrypt=False) -> bytes:
     assert detector(func)
@@ -113,25 +131,26 @@ def main_decrypt(func: ECB_Oracle, suffix_length: int, view_decrypt=False) -> by
     ctexts = [chunks(func(bytes(15-n)), BLOCK_SIZE) for n in range(16)]
     shifted = [block for blocks in zip(*ctexts) for block in blocks]
     attack_blocks = shifted[:suffix_length]
-
     plain = bytes(15)
+    
     for block in attack_blocks:
         plain += find_byte(plain[-15:], block, func)
         if view_decrypt:
             print(plain[15:])
             from time import sleep
             sleep(0.02)
+    
     return plain[15:]
 
 
 if __name__ == '__main__':
     oracle = constr_oracle()
     block_size, suffix_length = bs_suff_length(oracle)
-
     print(f"{block_size=}")
     print(f"{suffix_length=}")
-    assert block_size == AES.block_size
-
+    
+    assert block_size == AES.block_size  # Assert that obtained block size is same as AES block size
+    
     pt = main_decrypt(oracle, suffix_length)
 
     print("\n----------------------\nSUCCESSFUL DECRYPTION\n----------------------")
