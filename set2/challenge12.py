@@ -86,23 +86,23 @@ def bs_suff_length(func: ECB_Oracle) -> tuple[int, int]:
 
 """ 
 
-        What we're doing here is trying to find the block size. Let's illustrate this with
-        an example.
+    What we're doing here is trying to find the block size. Let's illustrate this with
+    an example.
 
-        Imagine a ciphertext is 30 bytes before padding, and has two blocks. We add a byte,
-        so now we have 31 bytes before padding, but still two blocks. We add a byte, so we
-        have 32 bytes w/o padding, and still two blocks. We add another byte so we have 33
-        bytes of text before padding, but now we have three blocks.
+    Imagine a ciphertext is 30 bytes before padding, and has two blocks. We add a byte,
+    so now we have 31 bytes before padding, but still two blocks. We add a byte, so we
+    have 32 bytes w/o padding, and still two blocks. We add another byte so we have 33
+    bytes of text before padding, but now we have three blocks.
 
-        We can now find the block size. When we got to 33 bytes without padding, we needed to
-        add another block, and then add padding to that block. Now we see that the length of the
-        ciphertext (unpadded, 33 bytes) has been padded out to 48 bytes. Taking this length and
-        subtracting it from our intial length, which we know is 32 bytes, we get a block size of
-        16 bytes. Only when the length of the ct is greater than the initial length do we calculate
-        the block size. 
+    We can now find the block size. When we got to 33 bytes without padding, we needed to
+    add another block, and then add padding to that block. Now we see that the length of the
+    ciphertext (unpadded, 33 bytes) has been padded out to 48 bytes. Taking this length and
+    subtracting it from our intial length, which we know is 32 bytes, we get a block size of
+    16 bytes. Only when the length of the ct is greater than the initial length do we calculate
+    the block size. 
 
-        Finding the length of the suffix is simple, we just subtract the number of bytes we added,
-        i, from the initial length. 
+    Finding the length of the suffix is simple, we just subtract the number of bytes we added,
+    i, from the initial length. 
         
 """
 
