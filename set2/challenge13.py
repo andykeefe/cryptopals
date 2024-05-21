@@ -47,6 +47,17 @@ def dec_profile(encrypted: bytes) -> bytes:
 def hack() -> bytes:
     user_1 = b'alev@novy.com'
     user_2 = user_1[:10] + pad_pkcs7(b'admin', BLOCK_SIZE) + user_1[10:]
+    
+    """ 
+
+        Slice the first 10 bytes of user_1 = b'alev@novy.'
+        Add padding the b'admin' up to 16 bytes, concatenate to
+        b'alev@novy.' = b'alev@novy.admin\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b'.
+        Then slice user_1 input from the tenth byte to the end of the byte string.
+        So user_2 = b'alev@novy.admin\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0bcom'
+
+    """
+    
     print(f"{user_1=}\n{user_2=}")
     
     ct_1 = enc_prof(user_1)
