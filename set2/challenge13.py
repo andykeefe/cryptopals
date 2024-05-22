@@ -51,9 +51,10 @@ def hack() -> bytes:
     """ 
 
         Slice the first 10 bytes of user_1 = b'alev@novy.'
-        Add padding the b'admin' up to 16 bytes, concatenate to
+        Add padding to b'admin' up to 16 bytes, concatenate to
         b'alev@novy.' = b'alev@novy.admin\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b'.
-        Then slice user_1 input from the tenth byte to the end of the byte string.
+        Then slice user_1 input from the tenth byte to the end of the byte string, and
+        concatenate.
         So user_2 = b'alev@novy.admin\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0bcom'
 
     """
