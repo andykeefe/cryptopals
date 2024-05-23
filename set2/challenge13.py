@@ -10,13 +10,6 @@ BLOCK_SIZE = AES.block_size
 _key = urandom(KEY_SIZE)
 
 
-def profile_parser(profile: bytes) -> dict[bytes, bytes]:
-    kv_pairs = profile.split(b"&")
-    parsed = {
-        key: value for key, value in [pair.split(b"=") for pair in kv_pairs]
-    }
-
-
 def profile_build(t: tuple[tuple[bytes, bytes], ...]) -> bytes:
     result = b'&'.join(key + b'=' + val for key, val in t)
     return result
