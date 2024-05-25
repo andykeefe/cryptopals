@@ -90,8 +90,8 @@ def hack() -> bytes:
     After constructing structured cookies for the user_1 and user_2 variables,
     we encrypt them using AES-128 ECB mode. We then "smash" these two values
     together, taking the first two blocks of ct_1 (user_1's profile after 
-    encryption) and the 2nd and 3rd blocks of ct_2 (user_2's profile after
-    encryption), and return the result to be used in the dec_prof function.
+    encryption) and the 2nd block of ct_2 (user_2's profile after encryption), 
+    and return the result to be used in the dec_prof function.
 
 """
 
