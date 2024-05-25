@@ -14,6 +14,16 @@ def profile_build(t: tuple[tuple[bytes, bytes], ...]) -> bytes:
     result = b'&'.join(key + b'=' + val for key, val in t)
     return result
 
+"""
+
+    We pass the info from in profile_for, connecting each of the keys
+    with an ampersand '&'. Then, for each 'key' in the info, we join it
+    with its value with an equal sign '='. So the result is,
+    b'email=alev@novy.com&uid=10&role=user'. This is the value that will
+    be encrypted in the enc_prof function.
+
+"""
+
 
 def profile_for(email: bytes) -> bytes:
     email = email.translate(None, b'&=')
@@ -24,11 +34,27 @@ def profile_for(email: bytes) -> bytes:
         ))
     return result
 
+"""
+
+    Define initial key and value pairs for building the profile.
+    We set the inital user id to a value of '10', and the role of the
+    email as 'user'. The keys and values are sent to the profile_build
+    function to actually construct the profile as it would be for a 
+    structured cookie.
+
+"""
+
 
 def enc_prof(email: bytes) -> bytes:
     cipher = AES.new(_key, AES.MODE_ECB)
     profile = profile_for(email)
     return cipher.encrypt(pad_pkcs7(profile, BLOCK_SIZE))
+
+"""
+
+    Encrypt the result of the profile_for (and profile_build) function. 
+
+""" 
 
 
 def dec_prof(encrypted: bytes) -> bytes:
@@ -58,6 +84,16 @@ def hack() -> bytes:
     ct_2 = enc_prof(user_2)
 
     return ct_1[:32] + ct_2[16:32]
+
+"""
+
+    After constructing structured cookies for the user_1 and user_2 variables,
+    we encrypt them using AES-128 ECB mode. We then "smash" these two values
+    together, taking the first two blocks of ct_1 (user_1's profile after 
+    encryption) and the 2nd and 3rd blocks of ct_2 (user_2's profile after
+    encryption), and return the result to be used in the dec_prof function.
+
+"""
 
 
 if __name__ == '__main__': 
