@@ -31,7 +31,7 @@ def enc_prof(email: bytes) -> bytes:
     return cipher.encrypt(pad_pkcs7(profile, BLOCK_SIZE))
 
 
-def dec_profile(encrypted: bytes) -> bytes:
+def dec_prof(encrypted: bytes) -> bytes:
     cipher = AES.new(_key, AES.MODE_ECB)
     pt = unpad_pkcs7(cipher.decrypt(encrypted), BLOCK_SIZE)
     return pt
@@ -63,5 +63,5 @@ def hack() -> bytes:
 if __name__ == '__main__': 
     hacking = hack()
     print("Malicious ct:", hacking)
-    print("Decryption:", dec_profile(hacking))
+    print("Decryption:", dec_prof(hacking))
     
