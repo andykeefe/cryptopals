@@ -16,7 +16,7 @@ def profile_build(t: tuple[tuple[bytes, bytes], ...]) -> bytes:
 
 
 def profile_for(email: bytes) -> bytes:
-    email.translate(None, b'&=')
+    email = email.translate(None, b'&=')
     result = profile_build((
         (b'email', email),
         (b'uid', b'10'),
