@@ -60,6 +60,9 @@ def enc_prof(email: bytes) -> bytes:
 def dec_prof(encrypted: bytes) -> bytes:
     cipher = AES.new(_key, AES.MODE_ECB)
     pt = unpad_pkcs7(cipher.decrypt(encrypted), BLOCK_SIZE)
+    # pt = unpad_pkcs7(cipher.decrypt(encrypted), len(encrypted))
+    # Maybe this will solve my issue of the dec_prof() failing with longer
+    # input sizes and slices
     return pt
 
 
