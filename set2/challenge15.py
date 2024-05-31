@@ -6,7 +6,7 @@ BLOCK_SIZE = 16
 
 def strip(string: bytes, block_size: int) -> bytes:
     try:
-        if unpad_pkcs7(string, block_size) != target:
+        if unpad_pkcs7(string, block_size) != b'ICE ICE BABY':
             raise Exception("What the hell happened?????")
             pass
         
@@ -43,8 +43,6 @@ def strip(string: bytes, block_size: int) -> bytes:
 
 if __name__ == '__main__':
     
-    target = b'ICE ICE BABY'
-
     base_string = b"ICE ICE BABY\x04\x04\x04\x04"
     bad_string1 = b"ICE ICE BABY\x05\x05\x05\x05"
     bad_string2 = b"ICE ICE BABY\x01\x02\x03\x04"
