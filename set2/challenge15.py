@@ -36,8 +36,6 @@ def strip(string: bytes, block_size: int) -> bytes:
 
     """
 
-
-
 if __name__ == '__main__':
     base_string = b"ICE ICE BABY\x04\x04\x04\x04"
     bad_string1 = b"ICE ICE BABY\x05\x05\x05\x05"
