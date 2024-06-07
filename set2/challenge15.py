@@ -9,12 +9,10 @@ def strip(string: bytes, block_size: int) -> bytes:
         if unpad_pkcs7(string, block_size) != b'ICE ICE BABY':
             raise Exception("What the hell happened?????")
             pass
-        
         else:
             print("-----------------------------------------------------------------------")
             print(f"PASS: PKCS#7 implemented properly for {string}")
             print("-----------------------------------------------------------------------")
-
     except Exception as e:
         print(f"{string}:", e)
 
