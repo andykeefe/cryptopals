@@ -31,7 +31,6 @@ def beautify_oracle(oracle: ECB_Oracle, prefix_length: int, block_size: int) -> 
 
 if __name__ == '__main__':
     oracle = constr_oracle()
-    
     bs, suffix_length = bs_suff_length(oracle)
     print(f"{bs=}")
     print(f"{suffix_length=}")
@@ -41,9 +40,7 @@ if __name__ == '__main__':
 
     prefix_length = find_pref_length(oracle, bs)
     postfix_length = suffix_length - prefix_length
-
     oracle = beautify_oracle(oracle, prefix_length, bs)
-    
     pt = main_decrypt(oracle, postfix_length)
     print("\n----------------------\nSUCCESSFUL DECRYPTION\n----------------------\n")
     print("Contents of string: \n")
