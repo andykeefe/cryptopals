@@ -40,7 +40,7 @@ def cbc(iv: bytes, key: bytes, ct: bytes) -> bytes:
 
             Here is the main logic of CBC decryption. We start knowing that 
             the ciphertext is broken up into blocks of size 16 bytes. We
-            create a for loop to iterate through block of the ciphertext.
+            create a for loop to iterate through blocks of the ciphertext.
 
             Each block is decrypted using the same key, and we store the
             result of each block in variable dec. Then we initially XOR the 
@@ -68,7 +68,6 @@ if __name__ == '__main__':
 
     ct = b64decode(b64_file)
     pt = cbc(iv, key, ct)
-
     print(pt.decode('ascii'))
 
     """ 
