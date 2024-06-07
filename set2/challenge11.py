@@ -1,6 +1,5 @@
 import sys
 sys.path.append("/home/andy/Documents/Cryptography/cryptopals")
-
 from set1.challenge8 import chunks
 from set2.challenge09v2 import pad_pkcs7
 
@@ -71,8 +70,7 @@ def get_oracle() -> tuple[str, TypeOracle]:
         plaintext = pad_pkcs7(pre + plaintext + post, BLOCK_SIZE)
 
         if mode == "ECB":
-            cipher = AES.new(key, AES.MODE_ECB)
-            
+            cipher = AES.new(key, AES.MODE_ECB)     
         else:
             iv = urandom(BLOCK_SIZE)
             cipher = AES.new(key, AES.MODE_CBC, iv)
@@ -138,7 +136,7 @@ if __name__ == '__main__':
         print(f"#{i}:    Actual Mode: {_mode},  Guessed Mode: {guess}")
         if _mode != guess:
             raise Exception("WRONGGGG")
-
+            
     print("SUCCESS")
 
     """ 
