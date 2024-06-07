@@ -23,7 +23,6 @@ def unpad_pkcs7(padded: bytes, block_size: int) -> bytes:
 
   
 if __name__ == '__main__':
-    
     plaintext = b'YELLOW SUBMARINE'
     pad_pt = pad_pkcs7(plaintext, 20)
     unpad_pt = unpad_pkcs7(pad_pt, len(pad_pt))
