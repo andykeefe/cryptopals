@@ -59,8 +59,9 @@ frequencies = {
 
 
 """
-Frequencies were obtained using Jane Austen's Pride and Prejudice. The program will be in the directory titled ch3_freq.py
-
+    
+    Frequencies were obtained using Jane Austen's Pride and Prejudice. The program will be in the directory titled ch3_freq.py
+    
 """
 
 
@@ -87,7 +88,6 @@ def score_text(text: bytes) -> float:
 
 def crack_xor(ciphertext: bytes) -> bytes:
     best_guess = (float('inf'), None)
-
     for candidate_key in range(256):
         full_key = bytes([candidate_key]) * len(ciphertext)
         
@@ -103,23 +103,15 @@ def crack_xor(ciphertext: bytes) -> bytes:
         """
 
         score = score_text(plaintext)
-        
-        
-        
-        curr_guess = (score, plaintext)
-        
+        curr_guess = (score, plaintext)        
         best_guess = min(best_guess, curr_guess)
-
         """
             curr_guess stores the value of the score and the plaintext and best_guess
             stores the minimum score value between the current guess and the previous
             guess
         """
-
     return best_guess[1]
 
 if __name__ == '__main__':
-
     ciphertext = bytes.fromhex("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736")
-
     print(crack_xor(ciphertext))
