@@ -35,7 +35,7 @@ Challenge 10 has us decrypt a text in CBC mode.
 
 Some block cipher modes like ECB and Cipher Feedback mode require the length of the plaintext to be an exact multiple of the block size for the cipher used; in these cases, we may need to add padding to the plaintext [2]. For example, assume that $`P `$ is our plaintext, $` L(P) `$ is the byte-length of the plaintext, and $` b `$ is the block size in bytes of the cipher used. 
 
-We determine the number of padding bytes _n_ such that $` n + L(P) \equiv 0 \pmod {b}`$, meaning the plaintext with padding must be a multiple of the block size. Additionally, the value of each byte appended is dictated by the number of padding bytes. So if you need to pad with 4 bytes, as in the case of challenge 9 in this set (Implement PKCS#7 padding), the appended bytes will be b'/x04/x04/x04/x04'. If you only needed to pad with 2 bytes, the appended bytes would be b'/x02/x02'. This is the theory behind PKCS #7 [3]. 
+We determine the number of padding bytes _n_ such that $` n + L(P) \equiv 0 (\text{mod} \space {b})`$, meaning the plaintext with padding must be a multiple of the block size. Additionally, the value of each byte appended is dictated by the number of padding bytes. So if you need to pad with 4 bytes, as in the case of challenge 9 in this set (Implement PKCS#7 padding), the appended bytes will be b'/x04/x04/x04/x04'. If you only needed to pad with 2 bytes, the appended bytes would be b'/x02/x02'. This is the theory behind PKCS #7 [3]. 
 
 PKCS #7 is one of the most popular padding schemes, according the the Cryptopals authors. 
 
