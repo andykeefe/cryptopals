@@ -12,7 +12,9 @@ We'll now cover RSA and DSA in more detail. Warning: equations abound.
 
 _**Encryption and Decryption with RSA**_
 
-The security of the RSA algorithm resides in the difficulty of solving equations in the form $` x^e \equiv c \pmod n `$. $` e `$, $` c `$ and $`n `$ are all known; only $`x `$ is unknown. Let's illustrate the RSA cryptoscheme using two parties, Alice and Bob. Alice and Bob want to establish communication with one another.
+The security of the RSA algorithm resides in the difficulty of solving equations in the form $` x^e \equiv c \space \text {mod} \space n `$. 
+
+$` e `$, $` c `$ and $`n `$ are all known; only $`x `$ is unknown. Let's illustrate the RSA cryptoscheme using two parties, Alice and Bob. Alice and Bob want to establish communication with one another.
 
 1. Alice will pursue _key generation_.
 - First she chooses _secret primes_, $` p `$ and $` q `$ to derive $`N`$
@@ -22,17 +24,17 @@ The security of the RSA algorithm resides in the difficulty of solving equations
 
 2. Bob will pursue _encryption_.
 - First he chooses a plaintext message $` m `$
-- Then he uses Alice's public key $`(N, e)`$ to compute $` c \equiv m^e \pmod N `$
+- Then he uses Alice's public key $`(N, e)`$ to compute $` c \equiv m^e \space \text {mod} \space N `$
 - Finally, the ciphertext $` c `$ is sent to Alice.
 
 3. Alice will pursue _decryption_.
-- First she computes $`d`$, the _decryption exponent_, satisfying the following equation: $` ed \equiv 1 \pmod{ (p-1)(q-1)} `$
-- Then she computes $` m' \equiv c^d \pmod N `$
+- First she computes $`d`$, the _decryption exponent_, satisfying the following equation: $` ed \equiv 1 \space \text {mod} \space{ (p-1)(q-1)} `$
+- Then she computes $` m' \equiv c^d \space \text {mod} \space N `$
 - $`m' = m`$
 
 The security of the scheme relies on the following:
 - $`p`$ and $`q`$ are extremely large primes, and $` N = pq `$
-- One who knows the values of $`p`$ and $`q`$ can easily solve for $`x`$ in the following equation: $` x^e \equiv c \pmod N `$
+- One who knows the values of $`p`$ and $`q`$ can easily solve for $`x`$ in the following equation: $` x^e \equiv c \space \text {mod} \space N `$
 - One who does _not_ know the values of $`p`$ and $`q`$ cannot easily find $`x`$ due to the difficulty of _large integer factorization_ [1].
 
 _**Digital Signatures with RSA**_
@@ -46,11 +48,11 @@ The digital signature scheme with RSA is quite similar to the RSA encryption sch
 - Finally he publishes $` N = pq `$ and $`v`$
 
 2. Andy pursues _signing_ of the document
-- First he computes $`s`$ such that $` sv \equiv 1 \pmod{(p-1)(q-1)}`$
-- Then he signs the document by computing $` S \equiv D^s \pmod n `$
+- First he computes $`s`$ such that $` sv \equiv 1 \space \text {mod} \space {(p-1)(q-1)}`$
+- Then he signs the document by computing $` S \equiv D^s \space \text {mod} \space n `$
 
 3. Patti pursues _verification_ of the document
-- She computes $` S^v \mod N `$ and checks that it is equal to $`D`$
+- She computes $` S^v \space \text {mod} \space N `$ and checks that it is equal to $`D`$
 
 You can see that the digital signature scheme for RSA has about the same set up as an RSA encryption scheme [2].
 
@@ -65,27 +67,27 @@ Now we'll look at the key generation, signature generation, and signature verifi
 - Generate prime divisor $`q`$ of $` p - 1 `$ such that $` 2^{159} < q < 2^{160} `$
 - Find an element $`\alpha `$ such that $`\alpha`$ generates subgroup with $`q`$ elements, meaning $`ord(\alpha) = q`$
 - Choose random integer $`d`$ such that $` 0 < d < q `$
-- Compute $`\beta \equiv \alpha ^d \mod p`$
+- Compute $`\beta \equiv \alpha ^d \space \text {mod} \space p`$
 - Public key $`k_{pub} = (p, q, \alpha, \beta)`$
 - Private key $`k_{pr} = (d) `$
 
 2. Signature generation
 - Choose integer as random ephemeral key $`k_E`$ such that $` 0 < k_E < q`$
-- Calculate $` r \equiv (\alpha^{k_e} \mod p) \mod q`$
-- Calculate $` s \equiv (SHA(x) + d \cdot r)k_e^{-1} \mod q`$, where, in this case, $`SHA`$ is the SHA-1 hash algorithm
+- Calculate $` r \equiv (\alpha^{k_e} \space \text {mod} \space p) \space \text {mod} \space q`$
+- Calculate $` s \equiv (SHA(x) + d \cdot r)k_e^{-1} \space \text {mod} \space q`$, where, in this case, $`SHA`$ is the SHA-1 hash algorithm
 
 3. Signature verification
-- Calculate auxillary value $` w \equiv s^{-1} \mod q`$
-- Calculate auxillary value $`u_1 \equiv w \cdot SHA(x) \mod q`$
-- Calculate auxillary value $` u_2 \equiv w \cdot r \mod q`$
-- Calculate $` v \equiv (\alpha^{u_1} \beta^{u_2} \mod p)\mod q `$
+- Calculate auxillary value $` w \equiv s^{-1} \space \text {mod} \space q`$
+- Calculate auxillary value $`u_1 \equiv w \cdot SHA(x) \space \text {mod} \space q`$
+- Calculate auxillary value $` u_2 \equiv w \cdot r \space \text {mod} \space q`$
+- Calculate $` v \equiv (\alpha^{u_1} \beta^{u_2} \space \text {mod} \space p)\space \text {mod} \space q `$
 - Verification $`ver_{k_{pub}}(x(r, s))`$ is result of:
-  - $`v \equiv r \mod q \implies `$ valid signature, signature accepted
-  - $` v \not\equiv r \mod q \implies`$ invalid signature, message or signature were modified or sender had wrong public key
+  - $`v \equiv r \space \text {mod} \space q \implies `$ valid signature, signature accepted
+  - $` v \not\equiv r \space \text {mod} \space q \implies`$ invalid signature, message or signature were modified or sender had wrong public key
  
 An attack on DSA could target the private key $`d`$, wherein the attacker tries to solve the discrete logarithm in the large cyclic group module $`p`$: 
     
-  - $` d \equiv log_{\alpha} \beta \mod p`$
+  - $` d \equiv log_{\alpha} \beta \space \text {mod} \space p`$
 
 It's also important that the ephemeral key $`k_E`$ is never reused, so for every signing operation, a new randomly chosen ephemeral key is necessary [3].
 
