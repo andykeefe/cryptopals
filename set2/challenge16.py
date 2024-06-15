@@ -1,7 +1,7 @@
 import sys
 sys.path.append("/home/andy/Documents/Cryptography/cryptopals")
 from set1.challenge2v2 import xor1
-from set2.challenge09v2 import pad_pkcs7, unpad_pkcs7
+from set2.challenge09 import pad_pkcs7, unpad_pkcs7
 
 from os import urandom
 from Crypto.Cipher import AES
