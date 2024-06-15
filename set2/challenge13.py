@@ -3,7 +3,7 @@ from Crypto.Cipher import AES
 
 import sys
 sys.path.append("/home/andy/Documents/Cryptography/cryptopals")
-from set2.challenge09v2 import pad_pkcs7, unpad_pkcs7
+from set2.challenge09 import pad_pkcs7, unpad_pkcs7
 
 KEY_SIZE = 16
 BLOCK_SIZE = AES.block_size
