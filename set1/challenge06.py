@@ -73,7 +73,6 @@ MAX_KEYSIZE = 40
 def guess_keysize(ct: bytes, number_guesses: int = 1) -> list[tuple[float, int]] :
     def get_score(size: int) -> float:
         chunks = (ct[:size], ct[size:2*size], ct[2*size:3*size], ct[3*size:4*size])
-
         average = sum(hamming_distance(a, b) for a, b in combinations(chunks, 2)) / 6
         return average / size
 
@@ -95,7 +94,6 @@ def guess_keysize(ct: bytes, number_guesses: int = 1) -> list[tuple[float, int]]
 def crack_vigenere(ciphertext: bytes, keysize: int) -> tuple[float, bytes] :
     chunks = [ciphertext[i::keysize] for i in range(keysize)]
     cracks = [crack_xor(chunk) for chunk in chunks]
-
     combined_score = sum(guess.score for guess in cracks) / keysize
     key = bytes(guess.key for guess in cracks)
 
@@ -121,9 +119,7 @@ if __name__ == '__main__':
         base64 = f.read()
     
     ciphertext = b64decode(base64)
-    
     keysizes = guess_keysize(ciphertext, 5)
-
     print("Best key size guesses (confidence, size):")
     pprint(keysizes)
 
