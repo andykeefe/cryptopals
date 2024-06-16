@@ -4,9 +4,9 @@ from dataclasses import dataclass
 from typing import Optional
 from pprint import pprint
 
-from challenge2v2 import xor1
-from challenge3v2 import score_text, frequencies
-from challenge5 import vigenere_xor
+from challenge02v2 import xor1
+from challenge03v2 import score_text, frequencies
+from challenge05 import vigenere_xor
 
 
 @dataclass(order=True)
