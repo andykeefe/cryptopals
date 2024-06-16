@@ -1,4 +1,4 @@
-from challenge3v2 import crack_xor, score_text
+from challenge03v2 import crack_xor, score_text
 
 """
     import crack_xor and score_text functions from challenge 3
