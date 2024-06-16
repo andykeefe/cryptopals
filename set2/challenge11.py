@@ -1,6 +1,6 @@
 import sys
 sys.path.append("/home/andy/Documents/Cryptography/cryptopals")
-from set1.challenge8 import chunks
+from set1.challenge08 import chunks
 from set2.challenge09 import pad_pkcs7
 
 """ 
