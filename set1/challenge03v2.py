@@ -1,4 +1,4 @@
-from challenge2v2 import xor1
+from challenge02v2 import xor1
 
 
 
