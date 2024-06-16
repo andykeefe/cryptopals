@@ -1,7 +1,5 @@
 from challenge12 import *
 from os.path import commonprefix
-import sys
-sys.path.append("/home/andy/Documents/Cryptography/cryptopals")
 
 
 def find_pref_length(oracle: ECB_Oracle, block_size: int) -> int:
