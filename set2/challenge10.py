@@ -11,9 +11,9 @@ sys.path.append("/home/andy/Documents/Cryptography/cryptopals")
 
 """ 
 
-from set1.challenge2v2 import xor1
-from set1.challenge7 import decrypt_ecb, AES
-from set1.challenge8 import chunks
+from set1.challenge02v2 import xor1
+from set1.challenge07 import decrypt_ecb, AES
+from set1.challenge08 import chunks
 from base64 import b64decode
 
 
