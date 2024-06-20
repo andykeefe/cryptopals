@@ -29,7 +29,7 @@ random_strings = [
 ]
 
 def enc_str(index: Optional[int] = None) -> bytes:
-    string = choice(random_strings) if index is None else strings[index]
+    string = choice(random_strings) if index is None else random_strings[index]
     cipher_obj = AES.new(key, AES.MODE_CBC, iv)
     ciphertext = cipher_obj.encrypt(pad_pkcs7(string, BLOCK_SIZE))
     return ciphertext
