@@ -1,4 +1,6 @@
-from challenge09 import unpad_pkcs7
+import sys
+sys.path.append("/home/andy/Documents/Cryptography/cryptopals")
+from set2.challenge09 import unpad_pkcs7
 
 BLOCK_SIZE = 16
 
