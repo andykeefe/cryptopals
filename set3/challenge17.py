@@ -1,7 +1,6 @@
 from random import choice
 from os import urandom
 from base64 import b64decode
-from typing import Optional
 from Crypto.Cipher import AES
 
 import sys
@@ -28,8 +27,8 @@ random_strings = [
     b'MDAwMDA5aXRoIG15IHJhZy10b3AgZG93biBzbyBteSBoYWlyIGNhbiBibG93'
 ]
 
-def enc_str(index: Optional[int] = None) -> bytes:
-    string = choice(random_strings) if index is None else random_strings[index]
+def enc_str() -> bytes:
+    string = choice(random_strings)
     cipher_obj = AES.new(key, AES.MODE_CBC, iv)
     ciphertext = cipher_obj.encrypt(pad_pkcs7(string, BLOCK_SIZE))
     return ciphertext
