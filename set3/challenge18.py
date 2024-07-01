@@ -5,7 +5,7 @@ from Crypto.Cipher import AES
 
 import sys
 sys.path.append("/home/andy/Documents/Cryptography/cryptopals")
-from set1.challenge2v2 import xor1
+from set1.challenge02v2 import xor1
 
 
 ciphertext = b64decode("L77na/nrFsKvynd6HzOoG7GHTLXsTVu9qvY/2syLXzhPweyyMTJULu/6/kXX0KSvoOLSFQ==")
