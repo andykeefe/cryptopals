@@ -5,8 +5,8 @@ from challenge18 import aes_ctr
 
 import sys
 sys.path.append("/home/andy/Documents/Cryptography/cryptopals/set1")
-from challenge2v2 import xor1
-from challenge3v2 import score_text
+from challenge02v2 import xor1
+from challenge03v2 import score_text
 
 
 _key = urandom(16)
