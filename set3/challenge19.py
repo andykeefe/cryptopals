@@ -100,4 +100,11 @@ if __name__ == '__main__':
     for text in texts:
         print(xor1(text, deduced_ks).decode())
 
+"""
+
+    Finally, we have not been Vanilla Iced. This is a glorious day. We've swapped a great piece
+    of American poetry for a great piece of Irish poetry by WB Yeats: Easter, 1916. 
+
+"""
+
 
