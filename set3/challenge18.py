@@ -38,7 +38,7 @@ def key_stream(key, iv) -> Generator[int, None, None]:
         keystream) is not incremented at all. If we were to reach the counter limit, that is, 
         about 32 GB of data, the IV would increment by 1, and the counter would reset. 
 
-        Is this a good implementation? I have no idea, but I surely won't be encrypted 32 GB of data
+        Is this a good implementation? I have no idea, but I surely won't be encrypting 32 GB of data
         with this program so it serves its purpose just fine so long as we can derive the plaintext. 
 
     """
