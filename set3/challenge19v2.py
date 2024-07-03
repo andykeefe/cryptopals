@@ -99,6 +99,7 @@ if __name__ == '__main__':
         XORing the plaintext with the ciphertext. 
         
     """
+    
     deduced_ks = xor1(long_pt, long_ct)
 
     """ 
