@@ -73,7 +73,9 @@ class MersenneTwister:
 
         """ 
 
-            Generator initialized with seed value, in our case, 47.
+            Generator initialized with seed value. This implementation introduces
+            a random 32-bit seed converted to an integer. A fixed seed is also
+            okay if you need to debug or whatever.
 
             Ensure that the seed value fits within 32-bit range using 
             a bitwise AND operation.
