@@ -114,8 +114,8 @@ class MersenneTwister:
 
 if __name__ == '__main__':
     r = MersenneTwister()
-    r.seed(0)
-    print("Sample values (seed=0):")
+    r.seed(47)
+    print("Sample values (seed=47):")
     print(r.get_num())
     print(r.get_num())
     print(r.get_num())
