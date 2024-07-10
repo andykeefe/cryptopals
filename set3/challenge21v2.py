@@ -57,7 +57,7 @@ class MersenneTwister:
 
         """ 
 
-            Initialization, initial state is 'n' zeros, where n is 
+                Initialization, initial state is 'n' zeros, where n is 
             a period paramter integer 624.
 
         """
@@ -73,16 +73,16 @@ class MersenneTwister:
 
         """ 
 
-            Generator initialized with seed value. This implementation introduces
+                Generator initialized with seed value. This implementation introduces
             a random 32-bit seed converted to an integer. A fixed seed is also
             okay if you need to debug or whatever.
 
-            Ensure that the seed value fits within 32-bit range using 
+                Ensure that the seed value fits within 32-bit range using 
             a bitwise AND operation.
 
             Result is stored in the first element of the state array self.state[0].
 
-            Then we compute successive elements of self.state given the seed value. We
+                Then we compute successive elements of self.state given the seed value. We
             iterate from 1 to the length of the self.state, computer variable 'gross'
             as the XOR of the previous state value shifted right 30 bits. Then compute 
             the new state value using the predefined constant f, and store it at self.state[i].
@@ -127,19 +127,19 @@ if __name__ == '__main__':
 
 """
 
-    I'm seeding from 32 random bits in this implementation, though that's not necessary
+        I'm seeding from 32 random bits in this implementation, though that's not necessary
     in the description of the challenge. I just wanted to ensure that different seeds would 
     generate different numbers. If you're looking to debug the program in closer detail,
     I'd recommend seeding with a fixed value, i.e. a constant seed of zero. 
 
-    Jones. D. (2010). "Good Practice in (Pseudo) Random Number Generators for Bioinformatics
+        Jones. D. (2010). "Good Practice in (Pseudo) Random Number Generators for Bioinformatics
     Applications" gives decent tips for using RNGs well, including avenues for seeding. 
     In practice, a timestamp is an acceptable (and simple) way of seeding a generator with an 
     adequately large value, but can be hurtful if you're seeding multiple programs at the same
     time, i.e. one thousand simulation that depend on the RNG to induce randomness being seeded
     at the same time could result in less-than-adequate randomness in the simulations themselves. 
     
-    Jones notes that /dev/urandom, which utilizes hardware timings to produce entropy, is a good 
+        Jones notes that /dev/urandom, which utilizes hardware timings to produce entropy, is a good 
     source, so I decided to use that in my program. 
 
 """
