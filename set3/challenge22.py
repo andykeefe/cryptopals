@@ -20,11 +20,11 @@ def generator() -> int:
 
         Why wait twice? 
 
-        Well, the first delay (in this case, between 5 and 30 seconds) 
+            Well, the first delay (in this case, between 5 and 30 seconds) 
         establishes a little unpredictability as to the exact instance 
         of seeding the RNG. 
 
-        The second wait adds a bit more uncertainty for the "attacker."
+            The second wait adds a bit more uncertainty for the "attacker."
         Output generation is separated by 5 to 30 seconds from the instance
         of seeding. 
 
@@ -42,7 +42,7 @@ def crack_MTseed(random_number: int) -> int:
 
         """ 
 
-            Initialize a loop from the current timestamp and change time
+                Initialize a loop from the current timestamp and change time
             value in a decreasing monotonic fashion. Get the randomly generated
             number by each decremented time value as the seed, check if it 
             is equal to the random number generated. If it is, break the loop
