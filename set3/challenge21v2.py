@@ -125,3 +125,24 @@ if __name__ == '__main__':
     for i, _ in enumerate(range(10), 1):
         print(f"Random number #{i} --> {r.get_num()}")
 
+"""
+
+    I'm seeding from 32 random bits in this implementation, though that's not necessary
+    in the description of the challenge. I just wanted to ensure that different seeds would 
+    generate different numbers. If you're looking to debug the program in closer detail,
+    I'd recommend seeding with a fixed value, i.e. a constant seed of zero. 
+
+    Jones. D. (2010). "Good Practice in (Pseudo) Random Number Generators for Bioinformatics
+    Applications" gives decent tips for using RNGs well, including avenues for seeding. 
+    In practice, a timestamp is an acceptable (and simple) way of seeding a generator with an 
+    adequately large value, but can be hurtful if you're seeding multiple programs at the same
+    time, i.e. one thousand simulation that depend on the RNG to induce randomness being seeded
+    at the same time could result in less-than-adequate randomness in the simulations themselves. 
+    
+    Jones notes that /dev/urandom, which utilizes hardware timings to produce entropy, is a good 
+    source, so I decided to use that in my program. 
+
+"""
+
+
+
